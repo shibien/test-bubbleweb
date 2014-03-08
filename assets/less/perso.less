@@ -1,0 +1,436 @@
+
+@font-face {
+   font-family: Chunkfive;
+   src: url("./Chunkfive.otf") format("opentype");
+   }
+    
+@font-face {
+   font-family: Chunkfive;
+   font-weight: bold;
+   src: url("./Chunkfive.otf") format("opentype");
+}
+
+
+@font-face {
+   font-family: PoetsenOneRegular;
+   src: url("./PoetsenOne-Regular.otf") format("opentype");
+   }
+    
+@font-face {
+   font-family: PoetsenOneRegular;
+   font-weight: bold;
+   src: url("./PoetsenOne-Regular.otf") format("opentype");
+}
+
+
+input[type=radio] {
+    display:none;
+}
+ 
+input[type=radio] + label{
+    display:inline-block;
+    margin: 5px;
+    padding: 10px 12px;
+    margin-bottom: 0;
+    font-size: 40px;
+    line-height: 20px;
+    color: white;
+    text-align: center;
+    text-shadow: 0 1px 1px rgba(255,255,255,0.75);
+    vertical-align: middle;
+    cursor: pointer;
+    background-color: #34495e;
+    /*background-image: -moz-linear-gradient(top,#fff,#e6e6e6);
+    background-image: -webkit-gradient(linear,0 0,0 100%,from(#fff),to(#e6e6e6));
+    background-image: -webkit-linear-gradient(top,#fff,#e6e6e6);
+    background-image: -o-linear-gradient(top,#fff,#e6e6e6);
+    background-image: linear-gradient(to bottom,#fff,#e6e6e6);*/
+    background-repeat: repeat-x;
+    border: 1px solid #ccc;
+    border-color: #e6e6e6 #e6e6e6 #bfbfbf;
+    border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
+    border-bottom-color: #b3b3b3;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff',endColorstr='#ffe6e6e6',GradientType=0);
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+    -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,0.2),0 1px 2px rgba(0,0,0,0.05);
+    -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,0.2),0 1px 2px rgba(0,0,0,0.05);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.2),0 1px 2px rgba(0,0,0,0.05);
+}
+ 
+input[type=radio]:checked + label {
+    background-image: none;
+    outline: 0;
+    -webkit-box-shadow: inset 0 2px 4px rgba(0,0,0,0.15),0 1px 2px rgba(0,0,0,0.05);
+    -moz-box-shadow: inset 0 2px 4px rgba(0,0,0,0.15),0 1px 2px rgba(0,0,0,0.05);
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.15),0 1px 2px rgba(0,0,0,0.05);
+    color:white;
+    background-color:#1abc9c;
+}
+
+
+.top-bar .name h1 {
+	color: white;
+}
+
+.row.full-width{ 
+	width: 100%; 
+	max-width: 100%; 
+}
+.row.medium-width{ 
+    width:50%;
+    max-width: 50%; 
+}
+#limite{
+    
+    max-width:40%;
+    overflow:hidden;
+}
+
+#connect{
+    height:80%;
+    width:100px;
+}
+
+#deconnect{
+    height:80%;
+    width:100px;
+}
+
+
+ 
+.display {
+    display: none;
+}
+
+#panel4{
+    max-height:500px;
+    overflow-y: scroll;
+}
+
+html, body, body > .page, .off-canvas-wrap { height:100%; } 
+html{
+    
+    height: 100%;
+}
+
+body {
+    
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+}
+
+h3{
+    color: #ecf0f1;
+}
+
+#white{
+    color:white;
+}
+
+#purple{
+    color:#9b59b6;
+}
+
+.panel{
+    min-width: 100%;
+}
+
+.inner-wrap { min-height: 100%; }
+
+#espace {
+    height:30px;
+}
+
+#espace2 {
+    height:30px;
+}
+
+.container {
+width: 100%;
+height:auto;
+background-color: #bdc3c7;
+
+}
+
+
+#ferme{
+    background-color: #3498db;
+}
+
+#chatEntries1,#chatEntries2,#chatEntries3,#chatEntries4{
+    width:100%;
+    height:400px;
+    overflow-y: scroll;
+    
+}
+
+#mobileChatEntries1,#mobileChatEntries2,#mobileChatEntries3,#mobileChatEntries4{ //-162px ou -176px
+    width:100%;
+    height:349px;
+    overflow-y: scroll;
+    
+}
+
+#colorLibre{
+    background-color: #008cba;
+}
+
+#mobilePanel5{
+    background-color: #008cba;
+}
+
+#color1, #mobilePanel1, #mobileColor1{
+    background-color: #1abc9c;
+}
+
+/*#mobilePanel1,#mobilePanel2,#mobilePanel3,#mobilePanel4{
+    height:65px;
+    overflow:hidden;
+}*/
+
+
+#color2, #mobilePanel2, #mobileColor2 ,#colorVisitor{
+    //background-color: #f1c40f;
+     background-color: #1abc9c;
+}
+
+#color3, #mobilePanel3, #mobileColor3{
+    //background-color: #e74c3c;
+     background-color: #1abc9c;
+}
+
+#color4, #mobilePanel4, #mobileColor4{
+   // background-color: #9b59b6;
+    background-color: #1abc9c;
+}
+
+
+#ligne{
+    width:100%;
+    clear :both;
+}
+
+#bottomVue{
+    position:absolute;
+    bottom:0;
+    right:5px;
+    height: 65px;
+    margin:0px;
+    padding:0px;
+}
+
+
+#topVue{
+    position:absolute;
+    top:0;
+    right:  20px;
+    height: 65px;
+    margin:0px;
+    padding:0px;
+}
+
+#rotateRight {
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+
+  /* also accepts left, right, top, bottom coordinates; not required, but a good idea for styling */
+  -webkit-transform-origin: 50% 50%;
+  -moz-transform-origin: 50% 50%;
+  -ms-transform-origin: 50% 50%;
+  -o-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+
+  /* Should be unset in IE9+ I think. */
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+  position:absolute;
+    top:100px;
+    right:-70px;
+    height: 65px;
+    margin:5px;
+    padding:0px;
+
+}
+
+#rotateLeft {
+  -webkit-transform: rotate(+90deg);
+  -moz-transform: rotate(+90deg);
+  -ms-transform: rotate(+90deg);
+  -o-transform: rotate(+90deg);
+  transform: rotate(+90deg);
+
+  /* also accepts left, right, top, bottom coordinates; not required, but a good idea for styling */
+  -webkit-transform-origin: 50% 50%;
+  -moz-transform-origin: 50% 50%;
+  -ms-transform-origin: 50% 50%;
+  -o-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+
+  /* Should be unset in IE9+ I think. */
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+  position:absolute;
+    top:170px;
+    left:-70px;
+    height: 65px;
+    margin:0px;
+    padding:0px;
+}
+
+#help{
+    background-color: #f1c40f;
+    height:100%;
+    margin:0px;
+    padding:0px;
+    width:100%;
+}
+
+#help:hover{
+    background-color: #f39c12;
+}
+
+#move{
+    min-width:25%;
+    max-width: 32%;
+    position:absolute;
+    bottom:0;
+    right:0;
+}
+
+#chatEntriesVisitor{
+        width:100%;
+        height: 300px;
+        overflow-y: scroll;
+
+}
+
+#cVisitor{
+    border:solid #f1c40f 3px;
+    background-color: #ecf0f1;
+}
+#triangleSelfVisitor {
+    width:0px;
+    border:10px solid #ecf0f1  ;
+    border-top:10px solid white;
+    border-left:10px white;
+    margin-right: 10px;
+    margin-left:0px;
+    float:right;
+    margin-top:5px;
+    margin-bottom:5px;
+}
+#triangleOtherVisitor {
+    width:0px;
+    border:10px solid #ecf0f1  ;
+    border-top:10px solid white;
+    border-right:10px white;
+    margin-right:-1px;
+    margin-left:0px;
+    float:left;
+    margin-top:5px;
+    margin-bottom:5px;
+
+/*box-shadow: 0 1px 2px rgba(black, 0.2);*/
+}
+
+#triangleSelf {
+    width:0px;
+    border:10px solid #bdc3c7  ;
+    border-top:10px solid white;
+    border-left:10px white;
+    margin-right: 10px;
+    margin-left:0px;
+    float:right;
+    margin-top:5px;
+    margin-bottom:5px;
+
+}
+
+#self{
+    text-align: center;
+    max-width: 70%;
+    min-width:50px;
+    float:right;
+    margin-top:5px;
+    margin-bottom:5px;
+    padding:2px;
+    heigth:auto;
+    font: 25px "Lucida Grande", Geneva, Arial, Verdana, sans-serif; 
+    background-color:white; 
+    color:#2c3e50;
+    word-break:break-all;
+    word-wrap: break-word;  
+    white-space: pre-wrap; /* css-3 */
+    white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+    white-space: -pre-wrap; /* Opera 4-6 */
+    white-space: -o-pre-wrap; /* Opera 7 */
+    word-wrap: break-word; /* Internet Explorer 5.5+ */
+    display:inline-block;
+ 
+}
+
+#triangleOther {
+    width:0px;
+    border:10px solid #bdc3c7  ;
+    border-top:10px solid white;
+    border-right:10px white;
+    margin-right:-1px;
+    margin-left:0px;
+    float:left;
+    margin-top:5px;
+    margin-bottom:5px;
+    
+    /*box-shadow: 0 1px 2px rgba(black, 0.2);*/
+}
+
+#other{
+    text-align: center;
+    max-width: 70%;
+    min-width:50px;
+    float:left;
+    margin-top:5px;
+    margin-bottom:5px;
+    height:auto;
+    font: 25px "Lucida Grande", Geneva, Arial, Verdana, sans-serif; 
+    background-color:white; 
+    color:#3498db;
+    word-break:break-all;
+    word-wrap: break-word;  
+    white-space: pre-wrap; /* css-3 */
+    white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+    white-space: -pre-wrap; /* Opera 4-6 */
+    white-space: -o-pre-wrap; /* Opera 7 */
+    word-wrap: break-word; /* Internet Explorer 5.5+ */
+    display:inline-block;
+}
+
+#visitorLibre,#agentCo{ 
+    background:#16a085;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#visitorOccupe{
+    background:#f39c12;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#visitorEchec,#agentDeco{
+    background:#c0392b;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+// #visitorDejaChat{
+//     background: #9b59b6;
+//     margin-top: 5px;
+//     margin-bottom: 5px;
+// }
+#visitorDejaChat{
+    background:#16a085;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}

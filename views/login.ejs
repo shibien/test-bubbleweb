@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<link rel="stylesheet" href="css/main.css" />
+
+	<title>BubbleWeb</title>
+
+</head>
+
+<body>
+
+	<div id="loginModal"  class="modal show" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+					<h1 class="text-center">Login</h1>
+				</div>
+				<div class="modal-body">
+					<div  id="login_form" class="form col-md-12 center-block">
+						<div class="form-group">
+							<input id="login_email" type="text" class="form-control input-lg" placeholder="Email">
+						</div>
+						<div class="form-group">
+							<input id="login_password" type="password" class="form-control input-lg" placeholder="Password">
+						</div>
+						<div class="form-group">
+							<button type="submit" id="connect_button" class="btn btn-primary btn-lg btn-block">Se Connecter</button>
+							<span class="pull"><a href="#">Mot de passe oublié?</a></span>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+
+
+	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="js/login.js"></script>
+</body>
+</html>

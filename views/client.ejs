@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="css/main.css" />
+    
+    <!-- <link rel="icon" type="image/png" href="images/favicon_test.png" /> -->
+    <title>Visitor's Page</title>
+</head>
+
+<body>
+    <h1>Client Side</h1>
+    <p>room name:</p>
+    <input type="text" id="roomId" class="form-control" placeholder="Text input">
+    <button type="button" id="roomConnect" class="btn btn-primary">Connect To Room</button>
+    <div id="chat">
+        
+
+    </div>
+
+    <input type="text" id="message" class="form-control" placeholder="Text input">
+    <button type="button" id="send" class="btn btn-primary">Send</button>
+
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script id="bubbleWebScript" src="js/client.js?website=test"></script>
+</body>
+</html>

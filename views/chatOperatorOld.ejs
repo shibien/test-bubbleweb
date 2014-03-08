@@ -1,0 +1,1097 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BubbleWeb</title>
+  <link rel="stylesheet" href="css/main.css" />
+  <link href="images/logo.png" rel="shortcut icon">
+</head> 
+<body>
+  <div class="page">
+    <div class="off-canvas-wrap">
+      <div class="inner-wrap">
+        <!--contenu du bouton à gauche sur petit écran-->
+        <aside class="left-off-canvas-menu">
+          <ul class="off-canvas-list">
+            <li><label class="first">Infos Visiteurs</label></li>    
+            <li><label class="second">Infos Agents</label></li>
+            <li><label class="third">Infos Générales</label></li>
+            <dl class="accordion" data-accordion> 
+              <dd> 
+                <a href="#panel1">Infos Visiteurs</a> 
+                <div id="panel1" class="content active"> 
+                  <dl class="tabs" data-tab> 
+                    <dd class="active">
+                      <a href="#panel2-1">Tab 1</a>
+                    </dd> 
+                    <dd>
+                      <a href="#panel2-2">Tab 2</a>
+                    </dd> 
+                    <dd>
+                      <a href="#panel2-3">Tab 3</a>
+                    </dd> 
+                    <dd>
+                      <a href="#panel2-4">Tab 4</a>
+                    </dd> 
+                  </dl> 
+                  <div class="tabs-content"> 
+                    <div class="content active" id="panel2-1"> 
+                      <p>First panel content goes here...</p> 
+                    </div> 
+                    <div class="content" id="panel2-2"> 
+                      <p>Second panel content goes here...</p> 
+                    </div> 
+                    <div class="content" id="panel2-3"> 
+                      <p>Third panel content goes here...</p> 
+                    </div> 
+                    <div class="content" id="panel2-4"> 
+                      <p>Fourth panel content goes here...</p> 
+                    </div> 
+                  </div> 
+                </div> 
+              </dd> 
+              <dd class="divider"></dd>
+              <dd> 
+                <a href="#panel2">Infos Agents</a> 
+                <div id="panel2" class="content"> Panel 2. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                </div> 
+              </dd> 
+              <dd class="divider"></dd>
+              <dd> 
+                <a href="#panel3">Infos Générales</a> 
+                <div id="panel3" class="content"> Panel 3. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                </div> 
+              </dd> 
+            </dl>
+          </ul> 
+        </aside>
+
+        <!--forme du bouton gauche et droite sur petit et moyen écran et barre de navigation-->
+        <div class="fixed">
+          <nav class="tab-bar show-for-medium-down">
+            <section class="left-small"> 
+              <a class="left-off-canvas-toggle">
+                <span><i class="fa fa-user fa-3x"></i></span>
+              </a>
+            </section>
+
+            <section class="middle tab-bar-section"> 
+              <h1 class="title text-left">BubbleWeb</h1>
+            </section> 
+
+            <section class="right-small">
+              <a class="right-off-canvas-toggle">
+                <span><i class="fa fa-cog fa-3x"></i></span>
+              </a>
+            </section>
+          </nav>
+        </div>  
+
+        <!--contenu du bouton à droite sur petit écran-->
+        <aside class="right-off-canvas-menu">
+          <ul class="off-canvas-list">
+            <li><label class="first">Paramètres</label></li>
+            <li><a href="#">Nom</a></li>
+            <li><a href="#">Photo</a></li>
+            <li><a href="#">Profile</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Déconnexion</a></li>
+            <li><a href="#">Signaler un problème</a></li>
+          </ul>
+        </aside>
+
+
+
+
+
+        <!--use Foundation top-bar element for all but small & medium screens-->
+        <nav class="top-bar hide-for-medium-down" data-topbar>
+          <ul class="title-area">
+            <li class="name">
+              <h1>BubbleWeb</h1>
+            </li>
+          </ul>
+
+          <section class="top-bar-section">
+            <ul class="left">
+              <li class="divider"></li>
+              <li class="has-dropdown">
+                <a href="#" class="">Messagerie</a>
+                <ul class="dropdown">
+                  <li><a href="#">Message 1</a></li>
+                  <li><a href="#">Message 2</a></li>
+                </ul>
+              </ul>
+
+
+              <ul class="right">
+                <li class="divider"></li>
+                <ul class="title-area">
+                  <li class="name">
+                    <h1>Frozen</h1>
+                  </li>
+                </ul>
+                <li class="divider"></li>
+                <ul class="title-area">
+                  <li class="name">
+                    <div class="profilePic">
+                      <img class="image" src="images/suzy.jpg" alt="Beauty Suzy" height="28" width="28">
+                    </div> 
+                  </li>
+                </ul>
+                <li class="divider"></li>
+                <ul>
+                  <li class="name">
+                    <a class="small success button" id="connect">Connecté</a>
+                  </li>
+                </ul>
+
+                <li class="divider"></li>
+                <li class="has-dropdown">
+                  <a href="#" class="">Paramètres</a>
+                  <ul class="dropdown">
+                    <li class="has-dropdown"><a href="#">Profile</a>
+
+
+
+                      <ul class="dropdown">
+                        <li><label>Dropdown Level 2 Label</label></li>
+                        <li><a href="#">Dropdown Level 2a</a></li>
+                        <li><a href="#">Dropdown Level 2b</a></li>
+                        <li class="has-dropdown"><a href="#">Dropdown Level 2c</a>
+
+                          <ul class="dropdown">
+                            <li><label>Dropdown Level 3 Label</label></li>
+                            <li><a href="#">Dropdown Level 3a</a></li>
+                            <li><a href="#">Dropdown Level 3b</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Dropdown Level 3c</a></li>
+                          </ul>
+                        </li>
+                        <li><a href="#">Dropdown Level 2d</a></li>
+                        <li><a href="#">Dropdown Level 2e</a></li>
+                        <li><a href="#">Dropdown Level 2f</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="#">Déconnexion</a></li>
+                    <li><a href="#">Signaler un problème</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </section>
+          </nav>            
+
+          <a class="exit-off-canvas" href="#"></a>
+
+
+          <div id="espace2"></div>
+          <div class="row hide-for-medium-down left full-width">
+
+            <div class="medium-3 columns">
+
+              <dl class="accordion" data-accordion> 
+                <dd> 
+                  <a href="#panel4">Visiteurs Connectés</a> 
+                  <div id="panel4" class="content active"> 
+
+                    <a class="small radius button" id="new">Ajouter</a>
+                    <a class="small radius button" id="old">Enlever</a>
+
+                    <div id="visiteurLibre">
+
+                    
+                      </div>
+
+
+                      <div id="visiteurEchec">
+
+
+
+                      </div>
+
+                      <div id="visiteurOccupe">
+
+
+                      </div>
+
+                      <div id="visiteurDejaChat">
+
+
+
+                      </div>
+
+                    </div> 
+
+                  </dd> 
+                  <dd> 
+                    <a href="#panel5">Agents Connectés</a> 
+                    <div id="panel5" class="content">
+
+                      <div class="row full-width" id="agentCo"> 
+                        <p class="display" id="agent">4321</p>                     
+                        <h5 class="text-center" id="white">Paul Mathieu</h5>   
+                      </div>
+
+                      <div class="row full-width" id="agentDeco"> 
+                        <p class="display" id="agent">4321</p>                     
+                        <h5 class="text-center" id="white">Mohammed Moudar</h5>   
+                      </div>
+
+                      <div class="row full-width" id="agentDeco"> 
+                        <p class="display" id="agent">4321</p>                     
+                        <h5 class="text-center" id="white">Benoît Bastien</h5>   
+                      </div>
+
+                    </div> 
+                  </dd> 
+                  <dd> 
+                    <a href="#panel6">Infos du Jour</a> 
+                    <div id="panel6" class="content"> 10 visiteurs sur le site aujourd"hui<br/>5 visiteurs ont chatté
+                    </div> 
+                  </dd> 
+                </dl>  
+
+
+
+
+              </div>
+
+
+
+              <div class="large-9 columns">
+                <div>
+                  <ul class="small-block-grid-4">
+                   <li id="room1">
+
+                    <div class="container" id="c1">
+                      <header class="top-bar" id="color1">
+                        <section class="left"> 
+                          <a class="tiny button" id="transfert">
+                            <span><i class="fa fa-group fa-2x"></i></span>
+                          </a>
+                        </section>
+                        <section class="middle tab-bar-section"> 
+                          <h4 class="text-center" id="white">BubbleWeb</h4>
+                          <p class="display" id="p1"></p>
+                        </section> 
+                        <section class="right">
+                          <a class="tiny button disabled" id="btnClose1">
+                            <span><i class="fa fa-times fa-2x"></i></span>
+                          </a>
+                        </section>
+                      </header>
+                      <div id="chatEntries1">
+                      </div>
+                      <div class="row collapse">
+                        <form id="sms1">
+                          <div class="small-12 columns">
+                            <input type="text" id="sms11" placeholder="Taper votre message" autocomplete="off" />
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+
+
+                  </li>
+                  <li id="room2">
+                    <div class="container" id="c2">
+                      <header class="top-bar" id="color2">
+                        <section class="left"> 
+                          <a class="tiny button" id="transfert">
+                            <span><i class="fa fa-group fa-2x"></i></span>
+                          </a>
+                        </section>
+                        <section class="middle tab-bar-section"> 
+                          <h4 class="text-center" id="white">BubbleWeb</h4>
+                          <p class="display" id="p2"></p>
+                        </section> 
+                        <section class="right">
+                          <a class="tiny button disabled" id="btnClose2">
+                            <span><i class="fa fa-times fa-2x"></i></span>
+                          </a>
+                        </section>
+                      </header>
+                      <div id="chatEntries2">
+                      </div>
+                      <div class="row collapse">
+                        <form id="sms2">             
+                          <div class="large-12 columns">
+                            <input type="text" id="sms22" placeholder="Taper votre message" autocomplete="off" />
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </li>
+                  <li id="room3">
+                    <div class="container" id="c3">
+                      <header class="top-bar" id="color3">
+                        <section class="left"> 
+                          <a class="tiny button" id="transfert">
+                            <span><i class="fa fa-group fa-2x"></i></span>
+                          </a>
+                        </section>
+                        <section class="middle tab-bar-section"> 
+                          <h4 class="text-center" id="white">BubbleWeb</h4>
+                          <p class="display" id="p3"></p>
+                        </section> 
+                        <section class="right">
+                          <a class="tiny button disabled" id="btnClose3">
+                            <span><i class="fa fa-times fa-2x"></i></span>
+                          </a>
+                        </section>
+                      </header>
+                      <div id="chatEntries3">
+                      </div>
+                      <div class="row collapse">
+                        <form id="sms3">                     
+                          <div class="large-12 columns">
+                            <input type="text" id="sms33" placeholder="Taper votre message" autocomplete="off" />
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </li>
+                  <li id="room4">
+                    <div class="container" id="c4">
+                      <header class="top-bar" id="color4">
+                        <section class="left"> 
+                          <a class="tiny button" id="transfert">
+                            <span><i class="fa fa-group fa-2x"></i></span>
+                          </a>
+                        </section>
+                        <section class="middle tab-bar-section"> 
+                          <h4 class="text-center" id="white">BubbleWeb</h4>
+                          <p class="display" id="p4"></p>
+                        </section> 
+                        <section class="right">
+                          <a class="tiny button disabled" id="btnClose4">
+                            <span><i class="fa fa-times fa-2x"></i></span>
+                          </a>
+                        </section>
+                      </header>
+                      <div id="chatEntries4">
+                      </div>
+                      <div class="row collapse">
+                        <form id="sms4">
+                          <div class="large-12 columns">
+                            <input type="text" id="sms44" placeholder="Taper votre message" autocomplete="off" />
+                          </div>                      
+                        </form>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+            </div>
+
+
+          </div>
+
+
+
+
+          <div class="row hide-for-large-up">
+            <div id="espace"></div>
+
+            <div id="chatmobile">
+
+    <!--div class="container" id="c1">
+    <header class="top-bar" id="color1">
+      <section class="middle tab-bar-section"> 
+        <h4 class="text-center" id="white">BubbleWeb</h4>
+        <p class="display" id="p1"></p>
+      </section> 
+      <section class="right">
+        <a class="tiny button" id="retour">
+          <span><i class="fa fa-arrow-circle-o-left fa-2x"></i></span>
+        </a>
+      </section>
+    </header>
+    <div id="chatEntries1mobile">
+    </div>
+    <div class="row collapse">
+      <form id="sms1">
+        <div class="small-12 columns">
+          <input type="text" id="sms11" placeholder="Taper votre message" autocomplete="off" />
+        </div>
+      </form>
+    </div>
+  </div-->
+
+  <!--div class="panel" id="mobilepanel1"--> 
+  <div class="row mid-width"> 
+    <p class="display">5678</p>
+    <ul class="button-group">
+      <li><a class="medium button" id="transfert"><span><i class="fa fa-group fa-2x"></i></span></a></li>
+      <li id="limite"><a class="button text-center" id="mobilepanel1"><p id="white">Bonjour comment allez-vous ? Avez-vous besoins d'aide ? </p></a></li>
+      <li><a class="medium button disabled" id="btnClose1"><span><i class="fa fa-times fa-2x"></i></span></a></li>
+    </ul>
+    
+
+              <!--div class="small-2 columns">
+                 <a class="medium button" id="transfert">
+                  <span><i class="fa fa-group fa-2x"></i></span>
+                </a>
+              </div>
+              <div class="small-8 columns" id="mobilepanel1">
+                <p class="display">5678</p>
+                <h5 class="text-center" id="white">Bonjour comment allez-vous ? Avez-vous besoins d'aide ?</h5>
+              </div>
+              <div class="small-2 columns">
+                <a class="medium button disabled" id="btnClose1">
+                  <span><i class="fa fa-times fa-2x"></i></span>
+                </a>
+              </div-->
+              <!--section class="left"> 
+                <a class="tiny button" id="transfert">
+                  <span><i class="fa fa-group fa-2x"></i></span>
+                </a>
+              </section>
+              <section class="middle" id="messageMobile"> 
+                <p class="display">5678</p>
+                <h5 class="text-center" id="white">Bonjour comment allez-vous ? Avez-vous besoins d'aide ?</h5>
+              </section> 
+             
+            <section class="right">
+            <a class="tiny button disabled" id="btnClose2">
+              <span><i class="fa fa-times fa-2x"></i></span>
+            </a>
+          </section-->
+
+        </div>
+
+        <div class="row mid-width"> 
+          <p class="display">5679</p>
+          <ul class="button-group">
+            <li><a class="medium button" id="transfert"><span><i class="fa fa-group fa-2x"></i></span></a></li>
+            <li id="limite"><a class="button text-center" id="mobilepanel2"><p id="white">Bonjour comment allez-vous ? Avez-vous besoins d'aide ?Bonjour comment allez-vous ? Avez-vous besoins d'aide ?Bonjour comment allez-vous ? Avez-vous besoins d'aide ?</p></a></li>
+            <li><a class="medium button disabled" id="btnClose2"><span><i class="fa fa-times fa-2x"></i></span></a></li>
+          </ul>
+        </div>
+        <div class="row mid-width"> 
+          <p class="display">5680</p>
+          <ul class="button-group">
+            <li><a class="medium button" id="transfert"><span><i class="fa fa-group fa-2x"></i></span></a></li>
+            <li id="limite"><a class="button text-center" id="mobilepanel3"><p id="class">Bonjour comment allez-vous ? Avez-vous besoins d'aide ?</p></a></li>
+            <li><a class="medium button disabled" id="btnClose3"><span><i class="fa fa-times fa-2x"></i></span></a></li>
+          </ul>
+        </div>
+        <div class="row mid-width"> 
+          <p class="display">5681</p>
+          <ul class="button-group">
+            <li><a class="medium button" id="transfert"><span><i class="fa fa-group fa-2x"></i></span></a></li>
+            <li id="limite"><a class="button text-center" id="mobilepanel4"><p id="white">Bonjour comment allez-vous ? Avez-vous besoins d'aide ?</p></a></li>
+            <li><a class="medium button disabled" id="btnClose4"><span><i class="fa fa-times fa-2x"></i></span></a></li>
+          </ul>
+        </div>
+
+
+        <!--/div-->
+
+         <!--div class="panel" id="mobilepanel2">
+          <div class="row full-width"> 
+           <p class="display">5679</p>
+           <h5 class="text-center" id="white">Bonjour comment allez-vous ? Avez-vous besoins d'aide ?</h5>
+         </div>
+       </div-->
+
+
+       <!--div class="panel" id="mobilepanel3">
+        <div class="row full-width"> 
+         <p class="display">5680</p>
+         <h5 class="text-center" id="white">Bonjour comment allez-vous ? Avez-vous besoins d'aide ?</h5>
+       </div>
+     </div>
+     <div class="panel" id="mobilepanel4">
+      <div class="row full-width"> 
+       <p class="display">5681</p>
+       <h5 class="text-center" id="white">Bonjour comment allez-vous ? Avez-vous besoins d'aide ?</h5>
+     </div-->
+
+
+
+
+
+   </div>
+ </div>
+
+
+</div>
+
+
+
+
+
+</div><!--off-canvas inner-->
+</div><!--off-canvas wrap-->
+
+</div>
+
+
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<!--script src="js/vendor/jquery.js"></script-->
+<script src="js/main.js"></script>
+
+
+<script>
+
+function recevoirMessage(message,roomid,dateReceptionMessage){
+  var date;
+  if(dateReceptionMessage===undefined){
+    date=new Date();
+  }else{
+    date=dateReceptionMessage;
+  }
+  
+  if($("#p1").text()===roomid){
+    $("#chatEntries1").append('<div id="ligne"><div id="triangleOther"></div><div id="other">'+message+'<p class="infos text-right">'+date.getHours()+':'+date.getMinutes()+'</p></div></div><br/>');
+  }else if($("#p2").text()===roomid){
+    $("#chatEntries2").append('<div id="ligne"><div id="triangleOther"></div><div id="other">'+message+'<p class="infos text-right">'+date.getHours()+':'+date.getMinutes()+'</p></div></div><br/>');
+  }else if($("#p3").text()===roomid){
+    $("#chatEntries3").append('<div id="ligne"><div id="triangleOther"></div><div id="other">'+message+'<p class="infos text-right">'+date.getHours()+':'+date.getMinutes()+'</p></div></div><br/>');
+  }else if($("#p4").text()===roomid){
+    $("#chatEntries4").append('<div id="ligne"><div id="triangleOther"></div><div id="other">'+message+'<p class="infos text-right">'+date.getHours()+':'+date.getMinutes()+'</p></div></div><br/>');
+  }else{
+    console.log("euh... y a un message qui se balade");
+  } 
+}
+
+function submit(sms_xx, chatEntries, p, dateEnvoiMessage){
+  var date;
+  if(dateEnvoiMessage===undefined){
+    date=new Date();
+  }else{
+    date=dateEnvoiMessage;
+  }
+  if($(sms_xx).val()){
+    $(chatEntries).append('<div id="ligne"><div id="triangleSelf"></div><div id="self">'+$(sms_xx).val()+'<p class="infos text-right">'+date.getHours()+':'+date.getMinutes()+'</p></div></div><br/>');
+    /*$(chatEntries).append('<div id="ligne"><div id="triangleOther"></div><div id="other">'+$(sms_xx).val()+'<p class="infos text-right">'+date.getHours()+':'+date.getMinutes()+'</p></div></div><br/>');*/
+
+    socket.emit('sendMessageToVisitor',{message:$(sms_xx).val(),roomId:$(p).text()});
+    $(sms_xx).val("");
+    return false;
+  }else{
+    return false;
+  }
+    //console.log($(sms_xx).val());
+  }
+
+  function messageEnvoye(content,chatEntries,p,dateEnvoiMessage){
+    var date;
+    if(dateEnvoiMessage===undefined){
+      date=new Date();
+    }else{
+      date=dateEnvoiMessage;
+    }
+    $(chatEntries).append('<div id="ligne"><div id="triangleSelf"></div><div id="self">'+content+'<p class="infos text-right">'+date.getHours()+':'+date.getMinutes()+'</p></div></div><br/>'); 
+  }
+
+  function resetActif(bouton,color,couleur){
+    document.getElementById(bouton).className= "tiny button disabled";
+    document.getElementById(color).style.backgroundColor=couleur;
+  }
+
+  function inactif(bouton,color){
+    document.getElementById(bouton).className= "tiny button";
+    document.getElementById(color).style.backgroundColor="#7f8c8d";
+  }
+
+
+  // var timer1=setTimeout(function(){
+  //   inactif("btnClose1","color1")
+  // } ,5000);  
+
+  // var timer2=setTimeout(function(){
+  //   inactif("btnClose2","color2")
+  // } ,5000);
+
+  // timer3=setTimeout(function(){
+  //   inactif("btnClose3","color3")
+  // } ,5000);
+
+  // timer4=setTimeout(function(){
+  //   inactif("btnClose4","color4")
+  // } ,5000);
+
+  $(document).on("submit", "#sms1",function(){submit("#sms11","#chatEntries1","#p1");resetActif("btnClose1","color1","#1abc9c");clearTimeout(timer1);
+    timer1=setTimeout(function(){
+      inactif("btnClose1","color1")
+    } ,5000);  
+    return false;  
+  });
+  $(document).on("submit", "#sms2",function(){submit("#sms22","#chatEntries2","#p2");resetActif("btnClose2","color2","#f1c40f");clearTimeout(timer2);
+    timer2=setTimeout(function(){
+      inactif("btnClose2","color2")
+    } ,5000);
+    return false;
+  });
+  $(document).on("submit", "#sms3",function(){submit("#sms33","#chatEntries3","#p3");resetActif("btnClose3","color3","#e74c3c");clearTimeout(timer3);
+    timer3=setTimeout(function(){
+      inactif("btnClose3","color3")
+    } ,5000);
+    return false;
+  });
+  $(document).on("submit", "#sms4",function(){submit("#sms44","#chatEntries4","#p4");resetActif("btnClose4","color4","#9b59b6");clearTimeout(timer4);
+    timer4=setTimeout(function(){
+      inactif("btnClose4","color4")
+    } ,5000);
+    return false;
+  });
+
+  function ouvrirEmptyRoom(conteneur_id,conteneur,p,roomid){
+    $(conteneur_id).replaceWith('<div class="container" id='+conteneur+'><p class="display" id='+p+'>'+roomid+'</p><div class="text-center" id="ferme"><h1 id="white">chat libre</h1></div></div>');
+  }
+
+  function initiateRoomConnexion(data){
+    ouvrirEmptyRoom("#c1","c1","p1",data.rooms[0].id);
+    ouvrirEmptyRoom("#c2","c2","p2",data.rooms[1].id);
+    ouvrirEmptyRoom("#c3","c3","p3",data.rooms[2].id);
+    ouvrirEmptyRoom("#c4","c4","p4",data.rooms[3].id);
+  }
+
+  /*ouvrirEmptyRoom("#c1","c1","p1","9876");
+  ouvrirEmptyRoom("#c2","c2","p2","9877");
+  ouvrirEmptyRoom("#c3","c3","p3","9878");
+  ouvrirEmptyRoom("#c4","c4","p4","9879");*/
+
+  function ouvrirFenetre(idRoom){
+    console.log("hum");
+    var roomid = idRoom;
+    console.log(idRoom);
+    var roomidTemp;
+    if(document.getElementById("chatEntries1")){
+      if(document.getElementById("chatEntries2")){
+        if(document.getElementById("chatEntries3")){
+          if(document.getElementById("chatEntries4")){
+            console.log("non, plus de place pour chatter");
+            return false;
+          }else{
+            console.log("oui");
+            roomidTemp=$("#p4").text();
+            $("#c4").replaceWith(' <div class="container" id="c4"> <header class="top-bar" id="color4"> <section class="left"> <a class="tiny button" id="transfert"> <span><i class="fa fa-group fa-2x"></i></span> </a> </section> <section class="middle tab-bar-section"> <h4 class="text-center" id="white">BubbleWeb</h4> <p class="display" id="p4"></p> </section> <section class="right"> <a class="tiny button disabled" id="btnClose4"> <span><i class="fa fa-times fa-2x"></i></span> </a> </section> </header> <div id="chatEntries4"> </div> <div class="row collapse"> <form id="sms4"><div class="large-12 columns"> <input type="text" id="sms44" placeholder="Taper votre message" autocomplete="off" /></div></form></div></div>'); 
+            if(roomid===undefined){
+              roomid=roomidTemp;
+            }
+            $("#p4").text(roomid);
+            //clearTimeout(timer4);
+            timer4=setTimeout(function(){
+              inactif("btnClose4","color4")
+            } ,5000);
+            return true;
+          }
+        }else{
+          console.log("oui");
+          roomidTemp=$("#p3").text();
+          $("#c3").replaceWith('<div class="container" id="c3"> <header class="top-bar" id="color3"> <section class="left"> <a class="tiny button" id="transfert"> <span><i class="fa fa-group fa-2x"></i></span> </a> </section> <section class="middle tab-bar-section"> <h4 class="text-center" id="white">BubbleWeb</h4> <p class="display" id="p3"></p> </section> <section class="right"> <a class="tiny button disabled" id="btnClose3"> <span><i class="fa fa-times fa-2x"></i></span> </a> </section> </header> <div id="chatEntries3"> </div> <div class="row collapse"> <form id="sms3"><div class="large-12 columns"> <input type="text" id="sms33" placeholder="Taper votre message" autocomplete="off" /></div></form></div></div>');
+          if(roomid===undefined){
+            roomid=roomidTemp;
+          } 
+          $("#p3").text(roomid);
+          resetActif("btnClose3","color3","#e74c3c");
+          //clearTimeout(timer3);
+          timer3=setTimeout(function(){
+            inactif("btnClose3","color3")
+          } ,5000);
+          return true;
+        }
+      }else{
+        console.log("oui");
+        roomidTemp=$("#p2").text();
+        $("#c2").replaceWith('<div class="container" id="c2"> <header class="top-bar" id="color2"> <section class="left"> <a class="tiny button" id="transfert"> <span><i class="fa fa-group fa-2x"></i></span> </a> </section> <section class="middle tab-bar-section"> <h4 class="text-center" id="white">BubbleWeb</h4> <p class="display" id="p2"></p> </section> <section class="right"> <a class="tiny button disabled" id="btnClose2"> <span><i class="fa fa-times fa-2x"></i></span> </a> </section> </header> <div id="chatEntries2"> </div> <div class="row collapse"> <form id="sms2"><div class="large-12 columns"> <input type="text" id="sms22" placeholder="Taper votre message" autocomplete="off" /></div></form></div></div>');
+        if(roomid===undefined){
+          roomid=roomidTemp;
+        }
+        $("#p2").text(roomid);
+        resetActif("btnClose2","color2","#f1c40f");
+        //clearTimeout(timer2);
+        timer2=setTimeout(function(){
+          inactif("btnClose2","color2")
+        } ,5000);  
+        return true;
+      }
+    }else{
+      console.log("oui");
+      roomidTemp=$("#p1").text();
+      $("#c1").replaceWith('<div class="container" id="c1"> <header class="top-bar" id="color1"> <section class="left"> <a class="tiny button" id="transfert"> <span><i class="fa fa-group fa-2x"></i></span> </a> </section> <section class="middle tab-bar-section"> <h4 class="text-center" id="white">BubbleWeb</h4> <p class="display" id="p1"></p> </section> <section class="right"> <a class="tiny button disabled" id="btnClose1"> <span><i class="fa fa-times fa-2x"></i></span> </a> </section> </header> <div id="chatEntries1"> </div> <div class="row collapse"> <form id="sms1"><div class="large-12 columns"> <input type="text" id="sms11" placeholder="Taper votre message" autocomplete="off" /></div></form></div></div>'); $("#p1").text(roomid);
+      if(roomid===undefined){
+        roomid=roomidTemp;       
+      }
+      $("#p1").text(roomid);
+      resetActif("btnClose1","color1","#1abc9c");
+      //clearTimeout(timer1);
+      timer1=setTimeout(function(){
+        inactif("btnClose1","color1")
+      } ,5000);  
+      return true;    
+    }
+  }
+
+
+
+   /*socket.on('newVisitorAssigned', function(data){
+    console.log("new visitor");
+    ouvrirFenetre(data.roomId);
+  });*/
+
+
+</script>
+
+<script>
+ /*   var secon=0; //initialise les secondes
+    var minu=0; //initialise les minutes
+    var sec="00";
+    var min="00";
+function chrono(socket_client_id){
+
+      console.log("fonction chrono enclenchée");
+
+secon++; //incrémentation des secondes
+if(secon<10){sec="0"+secon;}else{sec=secon;}
+if(min<10){min="0"+minu;}else{min=minu;}
+if (secon>59){secon=0;minu++;} //si les secondes > 59,on les réinitialise à 0 et on incrémente les minutes de 1
+//document.getElementById(waiting).value=" "+minu+" "+secon; //on affiche les secondes
+var id='#'+socket_client_id+'';
+console.log(socket_client_id);
+console.log(id);
+$(id).replaceWith('<span class="info" id="'+socket_client_id+'">'+min+":"+sec+'</span>');
+compte=setTimeout(function(){chrono(socket_client_id)},1000); //la fonction est relancée toutes les secondes
+}
+//chrono();*/
+
+
+function chrono2(date,socket_client_id){
+  //date de la forme var d1 = new Date(2014,0,1); 1er janvier 2014
+  var dateConnection = new Date(date);
+  var date2=new Date();
+  var dDiff=new Date(date2-dateConnection);
+  var hour="00";
+  var min="00";
+  var sec="00";
+  hour=(dDiff.getHours() - 1);
+  min=(dDiff.getMinutes());
+  sec=(dDiff.getSeconds());
+  if(sec<10){sec="0"+sec;}
+  if(min<10){min="0"+min;}
+  if(hour<10){hour="0"+hour;}
+  var compteur=hour+":"+min+":"+sec;
+  var id='#'+socket_client_id+'';
+  //console.log(socket_client_id);
+  //console.log(id);
+  $(id).replaceWith('<span class="info" id="'+socket_client_id+'">'+compteur+'</span>');
+  compte=setTimeout(function(){chrono2(date,socket_client_id)},1000);
+}
+
+</script>
+
+<script>
+/*var objDiv = document.getElementById("#chatEntries1");
+if(objDiv.scrollTop === objDiv.scrollHeight){
+  objDiv.scrollTop = objDiv.scrollHeight;
+}*/
+var div = $('#chatEntries1');
+if(div.scrollTop===div.get(0).scrollHeight ){
+  div.scrollTop( div.get(0).scrollHeight )
+};
+</script>
+
+
+<script>
+function close(bouton, conteneur_id, conteneur, p, roomid){
+  if(document.getElementById(bouton).className==="tiny button"){
+    $(conteneur_id).replaceWith('<div class="container" id='+conteneur+'><p class="display" id='+p+'>'+roomid+'</p><div class="text-center" id="ferme"><h1 id="white">chat libre</h1></div></div>');
+  }
+}
+
+function setVisitors(data){
+  
+}
+
+function setRooms(data){//roomid, display, activity, historique
+  for(j=0;j<data.rooms.length;j++){
+    if(data.rooms[j].is_displayed===true){
+      ouvrirFenetre(data.rooms[j].id);
+      if(data.rooms[j].is_active===false){
+        if(j===0){
+          inactif("btnClose1","color1");
+        }else if(j===1){
+          inactif("btnClose2","color2");
+        }else if(j===2){
+          inactif("btnClose3","color3");
+        }else if(j===3){
+          inactif("btnClose4","color4");
+        }
+
+      }
+      if(data.rooms[j].messages){
+        for(i=0;i<data.rooms[j].messages.length;i++){
+          if(data.rooms[j].messages[i].isAutomaticMessage===true){
+            robotUrl(url,roomid);
+          }
+          else{
+            if(data.rooms[j].messages[i].toVisitor===true){
+              if(j===0){
+                messageEnvoye(data.rooms[j].messages[i].content,"#chatEntries1","#p1",data.rooms[j].messages[i].date);
+              }
+              else if(j===1){
+                messageEnvoye(data.rooms[j].messages[i].content,"#chatEntries2","#p2",data.rooms[j].messages[i].date);
+              }
+              else if(j===2){
+                messageEnvoye(data.rooms[j].messages[i].content,"#chatEntries3","#p3",data.rooms[j].messages[i].date);
+              }
+              else if(j===3){
+                messageEnvoye(data.rooms[j].messages[i].content,"#chatEntries4","#p4",data.rooms[j].messages[i].date);
+              }
+              else{
+                console.log("erreur setRooms");
+              }
+            }
+            else{
+              recevoirMessage(data.rooms[j].messages[i].content,data.rooms[j].id,data.rooms[j].messages[i].date);
+            }
+          }
+        }
+      }
+      
+    }else{
+      if(j===0){
+        ouvrirEmptyRoom("#c1","c1","p1",data.rooms[j].id);
+      }else if(j===1){
+        ouvrirEmptyRoom("#c2","c2","p2",data.rooms[j].id);
+      }else if(j===2){
+        ouvrirEmptyRoom("#c3","c3","p3",data.rooms[j].id);
+      }else if(j===3){
+        ouvrirEmptyRoom("#c4","c4","p4",data.rooms[j].id);
+      }
+    }
+
+  }
+}
+//submit("#sms11","#chatEntries1","#p1")
+//messageEnvoye(content,chatEntries,p,event,dateEnvoiMessage)
+//robotUrl(url,roomid)
+//recevoirMessage(message,roomid,dateReceptionMessage)
+//submit(sms_xx, chatEntries, p, event,dateEnvoiMessage)
+
+function setAgents(socket_agent_id,etat){
+
+}
+
+
+
+function initiatePage(data){
+  // data: nomAgent+état, 4 roomId+ouverteOuFermé+ActiveOuInactive+historique, visiteurs+état, agents+état, 
+  //historique:isAutomaticMessage, content, date, toVisitor
+  setRooms(data);
+  setVisitors(data);
+
+}
+
+$(document).on('click', "#btnClose1",function(){
+  var roomid=$("#p1").text();
+  close("btnClose1","#c1","c1","p1",roomid);
+  socket.emit('setRoomNotDisplayed', {roomId: roomid}); 
+});
+$(document).on('click', "#btnClose2",function(){
+  var roomid=$("#p2").text();
+  close("btnClose2","#c2","c2","p2",roomid);
+  socket.emit('setRoomNotDisplayed', {roomId: roomid}); 
+});
+$(document).on('click', "#btnClose3",function(){
+  var roomid=$("#p3").text();
+  close("btnClose3","#c3","c3","p3",roomid);
+  socket.emit('setRoomNotDisplayed', {roomId: roomid});
+});
+$(document).on('click', "#btnClose4",function(){
+  var roomid=$("#p4").text();
+  close("btnClose4","#c4","c4","p4",roomid);
+  socket.emit('setRoomNotDisplayed', {roomId: roomid});
+});
+</script>
+
+
+<script>
+
+/*<div class="row full-width" id="visitorLibre"> 
+                      <p class="display" id="visiteur">4321</p>
+                      <div class="small-6 columns text-center">
+                        <h5 id="white">France, Nancy<p>url en cours, chat possible</p></h5> 
+                      </div>
+                      <div class="small-6 columns text-center">
+                        <a class="small radius button" onclick="if(($(this).attr('class'))==='small radius button'){if(ouvrirFenetre()===true){var id=$(this).parent().siblings('p').text();changeStatutVisitor(id,'isChatting');}}">Chatter 
+                          <span class="info" id="4321"></span></a>
+                      </div>
+                      </div>*/
+
+                      function clique(item){
+                        console.log("clique");
+                        if(($(item).attr('class'))==='small radius button'){if(ouvrirFenetre()===true){var id=$(item).parent().siblings('p').text();changeStatutVisitor(id,'isChatting');}}
+                      }
+
+function addVisitor(geolocalisation,socket_client_id,url,date,visitorState){//isChatting, failedToAssignOperator, alreadyChatted
+
+  console.log("fonction addVisitor enclenchée");
+  console.log("part:"+visitorState);
+  if(visitorState==="normalState"){
+   $(visiteurLibre).append('<div class="row full-width" id="visitorLibre"> <p class="display" id="visiteur">'+socket_client_id+'</p> <div class="small-6 columns text-center"> <h5 id="white">'+geolocalisation+'<p>'+url+'</p></h5> </div> <div class="small-6 columns text-center"> <a class="small radius button" onClick="clique(this)">Chatter <span class="info" id="'+socket_client_id+'"></span></a> </div> </div>'); 
+ }
+ else if(visitorState==="isChatting"){
+  $(visiteurOccupe).append('<div class="row full-width" id="visitorOccupe"> <p class="display" id="idclient">'+socket_client_id+'</p> <div class="small-6 columns text-center"> <h5 id="white">'+geolocalisation+'<p>'+url+'</p></h5> </div> <div class="small-6 columns text-center"> <a class="small radius button disabled" onClick="clique(this)">Chatter <span class="info" id="'+socket_client_id+'"></span></a> </div> </div>'); 
+}else if(visitorState==="failedToAssignOperator"){
+  $(visiteurEchec).append('<div class="row full-width" id="visitorEchec"> <p class="display" id="idclient">'+socket_client_id+'</p> <div class="small-6 columns text-center"> <h5 id="white">'+geolocalisation+'<p>'+url+'</p></h5> </div> <div class="small-6 columns text-center"> <a class="small radius button" onClick="clique(this)">Chatter <span class="info" id="'+socket_client_id+'"></span></a> </div> </div>');
+}else if(visitorState==="alreadyChatted"){
+ $(visiteurDejaChat).append('<div class="row full-width" id="visitorDejaChat"> <p class="display" id="idclient">'+socket_client_id+'</p> <div class="small-6 columns text-center"> <h5 id="white">'+geolocalisation+'<p>'+url+'</p></h5> </div> <div class="small-6 columns text-center"> <a class="small radius button disabled" onClick="clique(this)">Chatter <span class="info" id="'+socket_client_id+'"></span></a> </div> </div>');
+}
+
+  //var date=new Date();
+  robotUrl("youtube.com","9876");
+  chrono2(date,socket_client_id);
+  
+}
+
+ /*$("#ouvrir").click(function(){
+    ouvrirFenetre();
+    var id=$("#ouvrir").parent().siblings('p').text();
+    console.log('id visiteur:'+id+' ');
+    changeStatutVisitor(id,"isChatting");
+  });*/
+
+function deleteVisitor(socket_client_id){
+  console.log("fonction deleteVisitor enclenchée");
+  var id='#'+socket_client_id;
+  console.log(id);
+  $(id).closest('.row').remove();
+}
+
+function changeStatutVisitor(socket_client_id, statut){
+  //isChatting, failedToAssignOperator, alreadyChatted
+  var id='#'+socket_client_id;
+  var etat;
+  if(statut==="isChatting"){
+    etat="visitorOccupe";
+    $(id).closest('a').attr("class","small radius button disabled");
+    changerPlaceVisitor(id,'#visiteurOccupe');   
+  }else if(statut==="failedToAssignOperator"){
+    etat="visitorEchec";
+    changerPlaceVisitor(id,'#visiteurEchec');
+  }else if(statut==="alreadyChatted"){
+    etat="visitorDejaChat";
+    $(id).closest('a').attr("class","small radius button disabled");
+    changerPlaceVisitor(id,'#visiteurDejaChat');
+  }else{
+    console.log("problème dans changeStatutVisitor");
+  }
+
+  $(id).closest('.row').attr("id",etat);
+  
+}
+
+function changerPlaceVisitor(id,zone){
+  $(id).closest('.row').detach().appendTo(zone);
+}
+
+
+/*<div class="row full-width" id="visitorLibre"> 
+                      <p class="display" id="visiteur">4321</p>
+                      <div class="small-6 columns text-center">
+                        <h5 id="white">France, Nancy<p>url en cours, chat possible</p></h5> 
+                      </div>
+                      <div class="small-6 columns text-center">
+                        <a class="small radius button" id="ouvrir">Chatter <span class="info" id="4321"></span></a>
+                      </div>
+                      </div>*/
+
+
+
+                      function addAgent(socket_agent_id){
+
+                      }
+
+                      function deleteAgent(socket_agent_id){
+
+                      }
+
+ /* socket.on('newClientConnected', function(data){
+    console.log("new client");
+    addVisitor(data.geolocalisation, data.socket_client_id, data.url);
+    //ouvrirFenetre(data.roomId);
+  });*/
+
+function robotUrl(url,roomid){
+  console.log("robotUrl enclenché");
+  if($("#p1").text()===roomid){
+    console.log("robot1 ok");
+    $("#chatEntries1").append('<br/><div id="ligne"><p class="text-center" id="purple">---page actuelle du client:<a href='+url+' target="_blank">'+url+'</a>---</p></div>');
+  }else if($("#p2").text()===roomid){
+    $("#chatEntries2").append('<br/><div id="ligne"><p class="text-center" id="purple">---page actuelle du client:<a href='+url+' target="_blank">'+url+'</a>---</p></div>');
+  }else if($("#p3").text()===roomid){
+    $("#chatEntries3").append('<br/><div id="ligne"><p class="text-center" id="purple">---page actuelle du client:<a href='+url+' target="_blank">'+url+'</a>---</p></div>');
+  }else if($("#p4").text()===roomid){
+    $("#chatEntries4").append('<br/><div id="ligne"><p class="text-center" id="purple">---page actuelle du client:<a href='+url+' target="_blank">'+url+'</a>---</p></div>');
+  }else{
+    console.log("bug robot url");
+  } 
+
+}
+
+$(document).on('click', "#new",function(){
+  var date=new Date(); // à supprimer lors du raccord avec le serveur
+  addVisitor("Nancy", "abc12345", "monsite.com",date);
+});
+
+$(document).on('click', "#old",function(){
+  deleteVisitor("abc12345");
+});
+
+$(document).on('click', "#connect",function(){
+  $("#connect").replaceWith('<a class="small alert button" id="deconnect">Déconnecté</a>');
+});
+$(document).on('click', "#deconnect",function(){
+  $("#deconnect").replaceWith('<a class="small success button" id="connect">Connecté</a>');
+});
+
+/*newClientConnected geolocalisation socket_client_id url*/
+
+
+
+</script>
+
+<script>
+$(document).on('click',"#mobilepanel1",function(){
+  console.log("mobile chat");
+  $("#chatmobile").replaceWith('<div class="container" id="c1"><header class="top-bar" id="color1"><div class="left"><h3 id="white">BubbleWeb</h3><p class="display" id="p4"></p></div> <div class="right"> <a class="small button" id="retour"><span><i class="fa fa-times fa-1x"></i></span></a> </div> </header> <div id="chatEntries1mobile"> </div> <div class="row collapse"> <form id="sms1"> <div class="row"> <div class="large-12 columns"> <input type="text" id="sms11" placeholder="Taper votre message" autocomplete="off" /> </div> </div></form></div></div>');
+});
+
+
+function getWindowHeight() {
+  var windowHeight=0;
+  if (typeof(window.innerHeight)=='number') {
+    windowHeight=window.innerHeight;
+  }
+  else {
+   if (document.documentElement&&
+     document.documentElement.clientHeight) {
+     windowHeight = document.documentElement.clientHeight;
+ }
+ else {
+   if (document.body&&document.body.clientHeight) {
+     windowHeight=document.body.clientHeight;
+   }
+ }
+}
+return windowHeight;
+}
+
+console.log("la hauteur de la fenetre pour mobile:"+(getWindowHeight()-162));
+
+
+
+</script>
+
+<script>
+$(document).foundation();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,8 @@
+{
+  "name": "osef",
+  "version": "1.0.0",
+  "devDependencies": {
+    "bootstrap": "~3.0.0",
+    "morris.js": "~0.4.3"
+  }
+}

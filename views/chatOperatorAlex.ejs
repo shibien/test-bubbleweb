@@ -1,0 +1,1736 @@
+
+
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BubbleWeb</title>
+  <link rel="stylesheet" href="css/main.css" />
+  <link href="images/logo.png" rel="shortcut icon">
+</head>
+<body>
+  <div class="page">
+    <div class="off-canvas-wrap">
+      <div class="inner-wrap">
+
+        <!-- fenêtre de popup pour le choix d'un agent pour le transfert de conversation-->
+        <div id="firstModal" class="reveal-modal" data-reveal>
+          <h2 style="color:#3498db;">Veuillez choisir l'agent vers qui transférer la conversation</h2>
+          <div class="row full-width">
+            <label style="color:#9b59b6;">Cliquez sur un agent</label>
+            
+              <div class="row">
+                <input type="radio" name="agent" value="bonjour" id="pokemonRed" checked><label for="pokemonRed">Paul Mathieu</label>
+              </div>
+              <div class="row">
+                <input type="radio" name="agent" value="aurevoir" id="pokemonBlue"><label for="pokemonBlue">Alexiel Green</label>
+              </div>
+              <div class="row">
+                <p id="choisi">Nom de l'agent choisi</p>
+              </div>
+              <div class="row text-right">
+                <!--input type="submit" value="Confirmer" id="confirmTransfert"-->
+                <a class=" alert button close-reveal-modal">Annuler</a>
+                <a class=" success button close-reveal-modal" onClick="transfert()">Confirmer</a>
+              </div>
+            
+          </div>
+
+          <a class="close-reveal-modal">&#215;</a>   
+        </div>
+
+
+          <!--contenu du bouton à gauche sur petit écran-->
+          <aside class="left-off-canvas-menu">
+            <ul class="off-canvas-list">
+              <dl class="accordion" data-accordion>
+                <dd>
+                  <a href="#panel1">Infos Visiteurs</a> 
+                  <div id="panel1" class="content active">
+                    <div id="visiteurLibre">
+                      <div class="row full-width" id="visitorLibre">
+                        <p class="display" id="visiteur">4321</p>
+                        <div class="small-6 columns text-center">
+                          <h5 id="white">
+                            France, Nancy
+                            <p>url en cours, chat possible</p>
+                          </h5>
+                        </div>
+                        <div class="small-6 columns text-center">
+                          <a class="small radius button" onClick="clique(this)">Chatter 
+                          <span class="info" id="4321"></span></a>
+                        </div>
+                      </div>
+                    </div>
+                    <div id="visiteurEchec">
+                      <div class="row full-width" id="visitorEchec">
+                        <p class="display" id="visiteur">4322</p>
+                        <div class="small-6 columns text-center">
+                          <h5 id="white">
+                            France, Nancy
+                            <p>url en cours, n'a pas pu chatté</p>
+                          </h5>
+                        </div>
+                        <div class="small-6 columns text-center">
+                          <a class="small radius button" onClick="clique(this)">Chatter 
+                          <span class="info" id="4322"></span></a>
+                        </div>
+                      </div>
+                    </div>
+                    <div id="visiteurOccupe">
+                      <div class="row full-width" id="visitorOccupe">
+                        <p class="display" id="visiteur">4323</p>
+                        <div class="small-6 columns text-center">
+                          <h5 id="white">
+                            France, Nancy
+                            <p>url en cours, en train de chatté</p>
+                          </h5>
+                        </div>
+                        <div class="small-6 columns text-center">
+                          <a class="small radius button disabled" onClick="clique(this)">Chatter 
+                          <span class="info" id="4323"></span></a>
+                        </div>
+                      </div>
+                    </div>
+                    <div id="visiteurDejaChat">
+                      <div class="row full-width" id="visitorDejaChat">
+                        <p class="display" id="visiteur">4324</p>
+                        <div class="small-6 columns text-center">
+                          <h5 id="white">
+                            France, Nancy
+                            <p>url en cours, a déjà chatté</p>
+                          </h5>
+                        </div>
+                        <div class="small-6 columns text-center">
+                          <a class="small radius button disabled" onClick="clique(this)">
+                          Chatter <span class="info" id="4324"></span></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </dd>
+                <dd class="divider"></dd>
+                <dd>
+                  <a href="#panel2">Infos Agents</a> 
+                  <div id="panel2" class="content"> Panel 2. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                  </div>
+                </dd>
+                <dd class="divider"></dd>
+                <dd>
+                  <a href="#panel3">Infos Générales</a> 
+                  <div id="panel3" class="content"> Panel 3. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                  </div>
+                </dd>
+              </dl>
+            </ul>
+          </aside>
+          <!--forme du bouton gauche et droite sur petit et moyen écran et barre de navigation-->
+          <div class="fixed">
+            <nav class="tab-bar show-for-medium-down">
+              <section class="left-small"> 
+                <a class="left-off-canvas-toggle">
+                <span><i class="fa fa-user fa-3x"></i></span>
+                </a>
+              </section>
+              <section class="middle tab-bar-section">
+                <h1 class="title text-left">BubbleWeb<span class="right"><img class="image" src="images/suzy.jpg" alt="Beauty Suzy" height="25" width="25"/></span></h1>
+              </section>
+              <section class="right-small">
+                <a class="right-off-canvas-toggle">
+                <span><i class="fa fa-cog fa-3x"></i></span>
+                </a>
+              </section>
+            </nav>
+          </div>
+          <!--contenu du bouton à droite sur petit écran-->
+          <aside class="right-off-canvas-menu">
+            <ul class="off-canvas-list">
+              <li><label class="first">Paramètres</label></li>
+              <li><a href="#">Nom</a></li>
+              <li><a href="#">Photo</a></li>
+              <li><a href="#">Profile</a></li>
+              <li class="divider"></li>
+              <li><a href="#">Déconnexion</a></li>
+              <li><a href="#">Signaler un problème</a></li>
+            </ul>
+          </aside>
+          <!--use Foundation top-bar element for all but small & medium screens-->
+          <nav class="top-bar hide-for-medium-down" data-topbar>
+            <ul class="title-area">
+              <li class="name">
+                <h1>BubbleWeb</h1>
+              </li>
+            </ul>
+            <section class="top-bar-section">
+              <ul class="left">
+                <li class="divider"></li>
+                <li class="has-dropdown">
+                  <a href="#" class="">Messagerie</a>
+                  <ul class="dropdown">
+                    <li><a href="#">Message 1</a></li>
+                    <li><a href="#">Message 2</a></li>
+                  </ul>
+              </ul>
+              <ul class="right">
+                <li class="divider"></li>
+                <ul class="title-area">
+                  <li class="name">
+                    <h1 id="firstName">Frozen</h1>
+                  </li>
+                </ul>
+                <li class="divider"></li>
+                <ul class="title-area">
+                  <li class="name">
+                    <div class="profilePic">
+                      <img class="image" src="images/suzy.jpg" alt="Beauty Suzy" height="28" width="28">
+                    </div>
+                  </li>
+                </ul>
+                <li class="divider"></li>
+                <ul>
+                  <li class="name">
+                    <a class="small success button" id="connect">Connecté</a>
+                  </li>
+                </ul>
+                <li class="divider"></li>
+                <li class="has-dropdown">
+                  <a href="#" class="">Paramètres</a>
+                  <ul class="dropdown">
+                    <li class="has-dropdown">
+                      <a href="#">Profile</a>
+                      <ul class="dropdown">
+                        <li><label>Dropdown Level 2 Label</label></li>
+                        <li><a href="#">Dropdown Level 2a</a></li>
+                        <li><a href="#">Dropdown Level 2b</a></li>
+                        <li class="has-dropdown">
+                          <a href="#">Dropdown Level 2c</a>
+                          <ul class="dropdown">
+                            <li><label>Dropdown Level 3 Label</label></li>
+                            <li><a href="#">Dropdown Level 3a</a></li>
+                            <li><a href="#">Dropdown Level 3b</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Dropdown Level 3c</a></li>
+                          </ul>
+                        </li>
+                        <li><a href="#">Dropdown Level 2d</a></li>
+                        <li><a href="#">Dropdown Level 2e</a></li>
+                        <li><a href="#">Dropdown Level 2f</a></li>
+                      </ul>
+                    </li>
+                    <li class="has-dropdown">
+                      <a href="#">Son</a>
+                      <ul class="dropdown">
+                        <li><a href="#">Activer le son</a></li>
+                        <li><a href="#">Enlever le son</a></li>
+                      </ul>
+                    </li>
+
+                    <li><a href="#">Démonstration</a></li>
+                    <li class="divider"></li>
+                    <li class="divider"></li>
+                    <li class="divider"></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Déconnexion</a></li>
+                    <li><a href="#">Signaler un problème</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </section>
+          </nav>
+          <a class="exit-off-canvas" href="#"></a>
+          <div id="espace2"></div>
+          <div class="row hide-for-medium-down left full-width">
+            <div class="medium-3 columns">
+              <dl class="accordion" data-accordion>
+                <dd>
+                  <a href="#panel4">Visiteurs Connectés</a> 
+                  <div id="panel4" class="content active">
+                    <!--a class="small radius button" id="new">Ajouter</a>
+                      <a class="small radius button" id="old">Enlever</a-->
+                    <div id="visiteurLibre">
+                      <!--div class="row full-width" id="visitorLibre">
+                        <p class="display" id="visiteur">4321</p>
+                        <div class="small-6 columns text-center">
+                          <h5 id="white">
+                            France, Nancy
+                            <p>url en cours, chat possible</p>
+                          </h5>
+                        </div>
+                        <div class="small-6 columns text-center">
+                          <a class="small radius button" onClick="clique(this)">Chatter 
+                          <span class="info" id="4321"></span></a>
+                        </div>
+                        </div-->
+                    </div>
+                    <div id="visiteurEchec">
+                      <!--div class="row full-width" id="visitorEchec">
+                        <p class="display" id="visiteur">4322</p>
+                        <div class="small-6 columns text-center">
+                          <h5 id="white">
+                            France, Nancy
+                            <p>url en cours, n'a pas pu chatté</p>
+                          </h5>
+                        </div>
+                        <div class="small-6 columns text-center">
+                          <a class="small radius button" onClick="clique(this)">Chatter 
+                          <span class="info" id="4322"></span></a>
+                        </div>
+                        </div-->
+                    </div>
+                    <div id="visiteurOccupe">
+                      <!--div class="row full-width" id="visitorOccupe">
+                        <p class="display" id="visiteur">4323</p>
+                        <div class="small-6 columns text-center">
+                          <h5 id="white">
+                            France, Nancy
+                            <p>url en cours, en train de chatté</p>
+                          </h5>
+                        </div>
+                        <div class="small-6 columns text-center">
+                          <a class="small radius button disabled" onClick="clique(this)">Chatter 
+                          <span class="info" id="4323"></span></a>
+                        </div>
+                        </div-->
+                    </div>
+                    <div id="visiteurDejaChat">
+                      <!--div class="row full-width" id="visitorDejaChat">
+                        <p class="display" id="visiteur">4324</p>
+                        <div class="small-6 columns text-center">
+                          <h5 id="white">
+                            France, Nancy
+                            <p>url en cours, a déjà chatté</p>
+                          </h5>
+                        </div>
+                        <div class="small-6 columns text-center">
+                          <a class="small radius button disabled" onClick="clique(this)">
+                          Chatter <span class="info" id="4324"></span></a>
+                        </div>
+                        </div-->
+                    </div>
+                  </div>
+                </dd>
+                <dd>
+                  <a href="#panel5">Agents Connectés</a> 
+                  <div id="panel5" class="content">
+                    <div class="row full-width" id="agentCo">
+                      <p class="display" id="agent">4321</p>
+                      <h5 class="text-center" id="white">Paul Mathieu</h5>
+                    </div>
+                    <div class="row full-width" id="agentDeco">
+                      <p class="display" id="agent">4321</p>
+                      <h5 class="text-center" id="white">Mohammed Moudar</h5>
+                    </div>
+                    <div class="row full-width" id="agentDeco">
+                      <p class="display" id="agent">4321</p>
+                      <h5 class="text-center" id="white">Benoît Bastien</h5>
+                    </div>
+                  </div>
+                </dd>
+                <dd>
+                  <a href="#panel6">Infos du Jour</a> 
+                  <div id="panel6" class="content"> 10 visiteurs sur le site aujourd"hui<br/>5 visiteurs ont chatté
+                  </div>
+                </dd>
+              </dl>
+            </div>
+            <!-------------------Chat Normal------------------------------>
+            <audio id="chatAudio">
+              <source src="sounds/bulle.ogg" type="audio/ogg">
+            </audio>
+            <div class="large-9 columns">
+              <div>
+                <ul class="small-block-grid-4">
+                  <li id="room1">
+                    <div class="container" id="c1">
+                      <header class="top-bar" id="color1">
+                        <section class="left"> 
+                          <a class="tiny button" data-reveal-id="firstModal" id="btnTransfert1">
+                          <span><i class="fa fa-group fa-2x"></i></span>
+                          </a>
+                        </section>
+                        <section class="middle tab-bar-section">
+                          <h4 class="text-center" id="white">BubbleWeb</h4>
+                          <p class="display" id="p1">5678</p>
+                        </section>
+                        <section class="right">
+                          <a class="tiny button disabled" id="btnClose1">
+                          <span><i class="fa fa-times fa-2x"></i></span>
+                          </a>
+                        </section>
+                        </header>
+                        <div id="chatEntries1">
+                        </div>
+                        <div class="row collapse">
+                        <form id="sms1" onsubmit="submitMessage(this);resetActif('btnClose1');return false;">
+                          <div class="small-12 columns">
+                            <input type="text" id="sms11" placeholder="Taper votre message" autocomplete="off" />
+                          </div>
+                        </form>
+                        </div>
+                    </div>
+                  </li>
+                  <li id="room2">
+                    <div class="container" id="c2">
+                      <!--header class="top-bar" id="color2">
+                        <section class="left"> 
+                          <a class="tiny button" id="transfert">
+                          <span><i class="fa fa-group fa-2x"></i></span>
+                          </a>
+                        </section>
+                        <section class="middle tab-bar-section">
+                          <h4 class="text-center" id="white">BubbleWeb</h4>
+                          <p class="display" id="p2">5679</p>
+                        </section>
+                        <section class="right">
+                          <a class="tiny button disabled" id="btnClose2">
+                          <span><i class="fa fa-times fa-2x"></i></span>
+                          </a>
+                        </section>
+                        </header>
+                        <div id="chatEntries2">
+                        </div>
+                        <div class="row collapse">
+                        <form id="sms2" onsubmit="submitMessage(this);resetActif('btnClose2');return false;">
+                          <div class="large-12 columns">
+                            <input type="text" id="sms22" placeholder="Taper votre message" autocomplete="off" />
+                          </div>
+                        </form>
+                        </div-->
+                    </div>
+                  </li>
+                  <li id="room3">
+                    <div class="container" id="c3">
+                      <!--header class="top-bar" id="color3">
+                        <section class="left"> 
+                          <a class="tiny button" id="transfert">
+                          <span><i class="fa fa-group fa-2x"></i></span>
+                          </a>
+                        </section>
+                        <section class="middle tab-bar-section">
+                          <h4 class="text-center" id="white">BubbleWeb</h4>
+                          <p class="display" id="p3">5680</p>
+                        </section>
+                        <section class="right">
+                          <a class="tiny button disabled" id="btnClose3">
+                          <span><i class="fa fa-times fa-2x"></i></span>
+                          </a>
+                        </section>
+                        </header>
+                        <div id="chatEntries3">
+                        </div>
+                        <div class="row collapse">
+                        <form id="sms3" onsubmit="submitMessage(this);resetActif('btnClose3');return false;">
+                          <div class="large-12 columns">
+                            <input type="text" id="sms33" placeholder="Taper votre message" autocomplete="off" />
+                          </div>
+                        </form>
+                        </div-->
+                    </div>
+                  </li>
+                  <li id="room4">
+                    <div class="container" id="c4">
+                      <!--header class="top-bar" id="color4">
+                        <section class="left"> 
+                          <a class="tiny button" id="transfert">
+                          <span><i class="fa fa-group fa-2x"></i></span>
+                          </a>
+                        </section>
+                        <section class="middle tab-bar-section">
+                          <h4 class="text-center" id="white">BubbleWeb</h4>
+                          <p class="display" id="p4">5680</p>
+                        </section>
+                        <section class="right">
+                          <a class="tiny button disabled" id="btnClose4">
+                          <span><i class="fa fa-times fa-2x"></i></span>
+                          </a>
+                        </section>
+                        </header>
+                        <div id="chatEntries4">
+                        </div>
+                        <div class="row collapse">
+                        <form id="sms4" onsubmit="submitMessage(this);resetActif('btnClose4');return false;">
+                          <div class="large-12 columns">
+                            <input type="text" id="sms44" placeholder="Taper votre message" autocomplete="off" />
+                          </div>
+                        </form>
+                        </div-->
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!------------- div temporaire pour stocker les échanges javascript-------------------->
+          <div class="display">
+            <div id="mobileTemp">
+            </div>
+          </div>
+          <!----------------chat caché pour mobile-------------------------->
+          <div class="display">
+            <div id="mobileStock">
+              <!--div class="container">
+                <p class="display" id="5678">5678</p>
+                <header class="top-bar" id="mobileColor1">
+                  <section class="left">
+                    <h4 class="text-center" id="white">BubbleWeb</h4>
+                  </section>
+                  <section class="right">
+                    <a class="tiny button" id="retour" onClick="retour(this)">
+                    <span><i class="fa fa-arrow-circle-o-left fa-3x"></i></span>
+                    </a>
+                  </section>
+                </header>
+                <div id="mobileChatEntries1">
+                </div>
+                <div class="row collapse">
+                  <form id="sms15678" onsubmit="submitMessage(this);resetActif('btnClose1');return false;">
+                    <div class="small-12 columns">
+                      <input type="text" id="sms115678" placeholder="Taper votre message" autocomplete="off" />
+                    </div>
+                  </form>
+                </div>
+                </div>
+                <div class="container">
+                <p class="display" id="5679">5679</p>
+                <header class="top-bar" id="mobileColor2">
+                  <section class="left">
+                    <h4 class="text-center" id="white">BubbleWeb</h4>
+                  </section>
+                  <section class="right">
+                    <a class="tiny button" id="retour" onClick="retour(this)">
+                    <span><i class="fa fa-arrow-circle-o-left fa-3x"></i></span>
+                    </a>
+                  </section>
+                </header>
+                <div id="mobileChatEntries2">
+                </div>
+                <div class="row collapse">
+                  <form id="sms25679" onsubmit="submitMessage(this);resetActif('btnClose2');return false;">
+                    <div class="small-12 columns">
+                      <input type="text" id="sms225679" placeholder="Taper votre message" autocomplete="off" />
+                    </div>
+                  </form>
+                </div>
+                </div>
+                <div class="container">
+                <p class="display" id="5680">5680</p>
+                <header class="top-bar" id="mobileColor3">
+                  <section class="left">
+                    <h4 class="text-center" id="white">BubbleWeb</h4>
+                  </section>
+                  <section class="right">
+                    <a class="tiny button" id="retour" onClick="retour(this)">
+                    <span><i class="fa fa-arrow-circle-o-left fa-3x"></i></span>
+                    </a>
+                  </section>
+                </header>
+                <div id="mobileChatEntries3">
+                </div>
+                <div class="row collapse">
+                  <form id="sms35680" onsubmit="submitMessage(this);resetActif('btnClose3');return false;">
+                    <div class="small-12 columns">
+                      <input type="text" id="sms335680" placeholder="Taper votre message" autocomplete="off" />
+                    </div>
+                  </form>
+                </div>
+                </div>
+                <div class="container">
+                <p class="display" id="5681">5681</p>
+                <header class="top-bar" id="mobileColor4">
+                  <section class="left">
+                    <h4 class="text-center" id="white">BubbleWeb</h4>
+                  </section>
+                  <section class="right">
+                    <a class="tiny button" id="retour" onClick="retour(this)">
+                    <span><i class="fa fa-arrow-circle-o-left fa-3x"></i></span>
+                    </a>
+                  </section>
+                </header>
+                <div id="mobileChatEntries4">
+                </div>
+                <div class="row collapse">
+                  <form id="sms45681" onsubmit="submitMessage(this);resetActif('btnClose4');return false;">
+                    <div class="small-12 columns">
+                      <input type="text" id="sms445681" placeholder="Taper votre message" autocomplete="off"/>
+                    </div>
+                  </form>
+                </div>
+                </div-->
+            </div>
+          </div>
+          <!----------------fin chat caché pour mobile------------------>
+          <!----------------partie mobile---------------->
+          <div class="row hide-for-large-up" id="mobileVisible">
+            <div id="espace"></div>
+            <div id="mobileChat">
+              <div class="row mid-width" id="mobileC1">
+                <!--p class="display" id="mobileP1">5678</p>
+                  <ul class="button-group">
+                    <li><a class="tiny button" id="transfert"><span><i class="fa fa-group fa-2x"></i></span></a></li>
+                    <li id="limite">
+                      <a class="button text-center" id="mobilePanel1" onClick="changeToChat(this)">
+                        <p id="white">17:58 Bonjour comment allez-vous ? Avez-vous besoins d'aide ? </p>
+                      </a>
+                    </li>
+                    <li><a class="tiny button disabled" id="mobileBtnClose1"><span><i class="fa fa-times fa-2x"></i></span></a></li>
+                  </ul-->
+              </div>
+              <div class="row mid-width" id="mobileC2">
+                <!--p class="display" id="mobileP2">5679</p>
+                  <ul class="button-group">
+                    <li><a class="tiny button" id="transfert"><span><i class="fa fa-group fa-2x"></i></span></a></li>
+                    <li id="limite">
+                      <a class="button text-center" id="mobilePanel2" onClick="changeToChat(this)">
+                        <p id="white">Bonjour comment allez-vous ? Avez-vous besoins d'aide ?Bonjour comment allez-vous ? Avez-vous besoins d'aide ?Bonjour comment allez-vous ? Avez-vous besoins d'aide ?</p>
+                      </a>
+                    </li>
+                    <li><a class="tiny button disabled" id="mobileBtnClose2"><span><i class="fa fa-times fa-2x"></i></span></a></li>
+                  </ul-->
+              </div>
+              <div class="row mid-width" id="mobileC3">
+                <!--p class="display" id="mobileP3">5680</p>
+                  <ul class="button-group">
+                    <li><a class="tiny button" id="transfert"><span><i class="fa fa-group fa-2x"></i></span></a></li>
+                    <li id="limite">
+                      <a class="button text-center" id="mobilePanel3" onClick="changeToChat(this)">
+                        <p id="white">Bonjour comment allez-vous ? Avez-vous besoins d'aide ?</p>
+                      </a>
+                    </li>
+                    <li><a class="tiny button disabled" id="mobileBtnClose3"><span><i class="fa fa-times fa-2x"></i></span></a></li>
+                  </ul-->
+              </div>
+              <div class="row mid-width" id="mobileC4">
+                <!--p class="display" id="mobileP4">5681</p>
+                  <ul class="button-group">
+                    <li><a class="tiny button" id="transfert"><span><i class="fa fa-group fa-2x"></i></span></a></li>
+                    <li id="limite">
+                      <a class="button text-center" id="mobilePanel4" onClick="changeToChat(this)">
+                        <p id="white">Bonjour comment allez-vous ? Avez-vous besoins d'aide ?</p>
+                      </a>
+                    </li>
+                    <li><a class="tiny button disabled" id="mobileBtnClose4"><span><i class="fa fa-times fa-2x"></i></span></a></li>
+                  </ul-->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--off-canvas inner-->
+    </div>
+    <!--off-canvas wrap-->
+    </div>
+    <!--page-->
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <!--script src="js/vendor/jquery.js"></script-->
+    <script src="js/main.js"></script>
+    <script>
+
+      function afficherAgentChoisi(){
+        $("#choisi").text($('input[type=radio][name=agent]:checked').attr('value'));
+        return false;
+      }
+      
+
+
+      function transfert(){
+        alert("c'est trop bon Pizza Hut");
+
+      }
+
+      function recevoirMessage(message,roomid,dateReceptionMessage){
+        var date, heure, min;
+        if(dateReceptionMessage===undefined){
+          date=new Date();
+        }else{
+          date=dateReceptionMessage;
+        }
+        if(date.getHours()<10){
+          heure="0"+date.getHours();
+        }else{
+          heure=date.getHours();
+        }
+        if(date.getMinutes()<10){
+          min="0"+date.getMinutes();
+        }else{
+          min=date.getMinutes();
+        }
+      
+        if($("#p1").text()===roomid){
+          $("#chatEntries1").append('<div id="ligne"><div id="triangleOther"></div><div id="other">'+message+'<p class="infos text-right">'+heure+':'+min+'</p></div></div><br/>');
+          $("#mobileChatEntries1").append('<div id="ligne"><div id="triangleOther"></div><div id="other">'+message+'<p class="infos text-right">'+heure+':'+min+'</p></div></div><br/></a>');
+          $("#mobilePanel1").replaceWith('<a class="button text-center" id="mobilePanel1" onClick="changeToChat(this)"><p id="white">'+heure+':'+min+' '+message+'</p>');
+          resetActif('btnClose1');
+          if((document.activeElement.id!=="sms11") || (document.activeElement.id!=="sms11"+roomid)){
+            timerClign1=setInterval(function(){
+              FaireClignoterImage("1")
+            } ,1000); 
+          }
+        }else if($("#p2").text()===roomid){
+          $("#chatEntries2").append('<div id="ligne"><div id="triangleOther"></div><div id="other">'+message+'<p class="infos text-right">'+heure+':'+min+'</p></div></div><br/>');
+          $("#mobileChatEntries2").append('<div id="ligne"><div id="triangleOther"></div><div id="other">'+message+'<p class="infos text-right">'+heure+':'+min+'</p></div></div><br/>');
+          $("#mobilePanel2").replaceWith('<a class="button text-center" id="mobilePanel1" onClick="changeToChat(this)"><p id="white">'+heure+':'+min+' '+message+'</p>');
+          resetActif('btnClose2');
+          if((document.activeElement.id!=="sms22") || (document.activeElement.id!=="sms22"+roomid)){
+            timerClign2=setInterval(function(){
+              FaireClignoterImage("2")
+            } ,1000); 
+          }
+        }else if($("#p3").text()===roomid){
+          $("#chatEntries3").append('<div id="ligne"><div id="triangleOther"></div><div id="other">'+message+'<p class="infos text-right">'+heure+':'+min+'</p></div></div><br/>');
+          $("#mobileChatEntries3").append('<div id="ligne"><div id="triangleOther"></div><div id="other">'+message+'<p class="infos text-right">'+heure+':'+min+'</p></div></div><br/>');
+          $("#mobilePanel3").replaceWith('<a class="button text-center" id="mobilePanel1" onClick="changeToChat(this)"><p id="white">'+heure+':'+min+' '+message+'</p>');
+          resetActif('btnClose3');
+          if((document.activeElement.id!=="sms33") || (document.activeElement.id!=="sms33"+roomid)){
+            timerClign3=setInterval(function(){
+              FaireClignoterImage("3")
+            } ,1000); 
+          }
+        }else if($("#p4").text()===roomid){
+          $("#chatEntries4").append('<div id="ligne"><div id="triangleOther"></div><div id="other">'+message+'<p class="infos text-right">'+heure+':'+min+'</p></div></div><br/>');
+          $("#mobileChatEntries4").append('<div id="ligne"><div id="triangleOther"></div><div id="other">'+message+'<p class="infos text-right">'+heure+':'+min+'</p></div></div><br/>');
+          $("#mobilePanel4").replaceWith('<a class="button text-center" id="mobilePanel1" onClick="changeToChat(this)"><p id="white">'+heure+':'+min+' '+message+'</p>');
+          resetActif('btnClose4');
+          if((document.activeElement.id!=="sms44") || (document.activeElement.id!=="sms44"+roomid)){
+            timerClign4=setInterval(function(){
+              FaireClignoterImage("4")
+            } ,1000); 
+          }
+        }else{
+          console.log("euh... y a un message qui se balade");
+        } 
+        audio.play();
+      }
+      
+      
+      function submitMessage(element,dateEnvoiMessage){
+        var date, sms, sms_xx, chatEntries, p, id, mobileChatEntries, mobilePanel,heure,min;
+      
+        if(dateEnvoiMessage===undefined){
+          date=new Date();
+        }else{
+          date=dateEnvoiMessage;
+        }
+        if(date.getHours()<10){
+          heure="0"+date.getHours();
+        }else{
+          heure=date.getHours();
+        }
+        if(date.getMinutes()<10){
+          min="0"+date.getMinutes();
+        }else{
+          min=date.getMinutes();
+        }
+      
+        sms=$(element).attr('id');
+      
+        if(sms.charAt(3)==="1"){
+          chatEntries="#chatEntries1";
+          p="#p1";
+          mobileChatEntries="#mobileChatEntries1";
+          mobilePanel="#mobilePanel1";
+          if(sms.length>4){
+            id=sms.substring(4);
+            sms_xx=sms.substring(0,4)+"1"+id;
+          }else{
+            id=$("#p1").text();
+            sms_xx=sms+"1";
+          }
+        }else if(sms.charAt(3)==="2"){
+          chatEntries="#chatEntries2";
+          p="#p2";
+          mobileChatEntries="#mobileChatEntries2";
+          mobilePanel="#mobilePanel2";
+          if(sms.length>4){
+            id=sms.substring(4);
+            sms_xx=sms.substring(0,4)+"2"+id;
+          }else{
+            id=$("#p2").text();
+            sms_xx=sms+"2";
+          }
+        }else if(sms.charAt(3)==="3"){
+          chatEntries="#chatEntries3";
+          p="#p3";
+          mobileChatEntries="#mobileChatEntries3";
+          mobilePanel="#mobilePanel3";
+          if(sms.length>4){
+            id=sms.substring(4);
+            sms_xx=sms.substring(0,4)+"3"+id;
+          }else{
+            id=$("#p3").text();
+            sms_xx=sms+"3";
+          } 
+        }else if(sms.charAt(3)==="4"){
+          chatEntries="#chatEntries4";
+          p="#p4";
+          mobileChatEntries="#mobileChatEntries4";
+          mobilePanel="#mobilePanel4";
+          if(sms.length>4){
+            id=sms.substring(4);
+            sms_xx=sms.substring(0,4)+"4"+id;
+          }else{
+            id=$("#p4").text();
+            sms_xx=sms+"4";
+          }
+        }
+        sms_xx='#'+sms_xx;
+        console.log(sms_xx);
+        var value=$(sms_xx).val();
+        //alert("la valeur de value est: "+value);
+        if(value){
+          $(chatEntries).append('<div id="ligne"><div id="triangleSelf"></div><div id="self">'+value+'<p class="infos text-right">'+heure+':'+min+'</p></div></div><br/>');
+          $(mobileChatEntries).append('<div id="ligne"><div id="triangleSelf"></div><div id="self">'+value+'<p class="infos text-right">'+heure+':'+min+'</p></div></div><br/>');
+          $(mobilePanel).replaceWith('<a class="button text-center" id='+mobilePanel.substring(1)+' onClick="changeToChat(this)"><p id="white">'+heure+':'+min+' '+value+'</p></a>');
+          socket.emit('sendMessageToVisitor',{message:value,roomId:id});
+          $(sms_xx).val("");
+          return false;
+        }else{
+          return false;
+        }
+        return false;
+      
+      }
+      
+      
+      function messageEnvoye(content,chatEntries,p,dateEnvoiMessage){
+        var date;
+        if(dateEnvoiMessage===undefined){
+          date=new Date();
+        }else{
+          date=dateEnvoiMessage;
+        }
+        $(chatEntries).append('<div id="ligne"><div id="triangleSelf"></div><div id="self">'+content+'<p class="infos text-right">'+date.getHours()+':'+date.getMinutes()+'</p></div></div><br/>'); 
+      }
+      
+      function resetActif(bouton){
+        console.log("fonction resetActif enclenchée");
+        if(bouton==="btnClose1"){
+          $('#btnClose1').addClass('disabled');
+          $('#mobileBtnClose1').addClass('disabled');
+          $('#color1').css('background-color','#1abc9c');
+          $('#mobileColor1').css('background-color','#1abc9c');
+          $('#mobilePanel1').css('background-color','#1abc9c');
+          clearTimeout(timer1);
+          timer1=setTimeout(function(){
+            inactif("btnClose1")
+          } ,5000);  
+          return false;
+        }else if(bouton==="btnClose2"){
+          $('#btnClose2').addClass('disabled');
+          $('#mobileBtnClose2').addClass('disabled');
+          $('#color2').css('background-color','#f1c40f');
+          $('#mobileColor2').css('background-color','#f1c40f');
+          $('#mobilePanel2').css('background-color','#f1c40f');
+          clearTimeout(timer2);
+          timer2=setTimeout(function(){
+            inactif("btnClose2")
+          } ,5000); 
+          return false;
+        }else if(bouton==="btnClose3"){
+          $('#btnClose3').addClass('disabled');
+          $('#mobileBtnClose3').addClass('disabled');
+          $('#color3').css('background-color','#e74c3c');
+          $('#mobileColor3').css('background-color','#e74c3c');
+          $('#mobilePanel3').css('background-color','#e74c3c');
+          clearTimeout(timer3);
+          timer3=setTimeout(function(){
+            inactif("btnClose3")
+          } ,5000); 
+          return false;
+        }else if(bouton==="btnClose4"){
+          $('#btnClose4').addClass('disabled');
+          $('#mobileBtnClose4').addClass('disabled');
+          $('#color4').css('background-color','#9b59b6');
+          $('#mobileColor4').css('background-color','#9b59b6');
+          $('#mobilePanel4').css('background-color','#9b59b6');
+          clearTimeout(timer4);
+          timer4=setTimeout(function(){
+            inactif("btnClose4")
+          } ,5000);
+          return false;
+        }
+        return false;
+      }
+      
+      function inactif(bouton){
+       console.log("fonction inactif enclenchée");
+       if(bouton==="btnClose1"){
+        $('#btnClose1').removeClass('disabled');
+        $('#mobileBtnClose1').removeClass('disabled');
+        $('#color1').css('background-color','#7f8c8d');
+        $('#mobileColor1').css('background-color','#7f8c8d');
+        $('#mobilePanel1').css('background-color','#7f8c8d');
+        return false;
+      }else if(bouton==="btnClose2"){
+        $('#btnClose2').removeClass('disabled');
+        $('#mobileBtnClose2').removeClass('disabled');
+        $('#color2').css('background-color','#7f8c8d');
+        $('#mobileColor2').css('background-color','#7f8c8d');
+        $('#mobilePanel2').css('background-color','#7f8c8d');
+        return false;
+      }else if(bouton==="btnClose3"){
+        $('#btnClose3').removeClass('disabled');
+        $('#mobileBtnClose3').removeClass('disabled');
+        $('#color3').css('background-color','#7f8c8d');
+        $('#mobileColor3').css('background-color','#7f8c8d');
+        $('#mobilePanel3').css('background-color','#7f8c8d');
+        return false;
+      }else if(bouton==="btnClose4"){
+        $('#btnClose4').removeClass('disabled');
+        $('#mobileBtnClose4').removeClass('disabled');
+        $('#color4').css('background-color','#7f8c8d');
+        $('#mobileColor4').css('background-color','#7f8c8d');
+        $('#mobilePanel4').css('background-color','#7f8c8d');
+        return false;
+      }
+      return false;
+      
+      /*document.getElementById(bouton).className= "tiny button";
+      document.getElementById(color).style.backgroundColor="#7f8c8d";
+      document.getElementById(mobileBouton).className= "medium button";
+      document.getElementById(mobilePanel).style.backgroundColor="#7f8c8d";*/
+      }
+      
+      var timer1,timer2,timer3,timer4;
+      function retrieveTimer(){
+
+      }
+       /*var timer1=setTimeout(function(){
+       inactif("btnClose1")
+       } ,5000);  */
+      
+      // var timer2=setTimeout(function(){
+      // inactif("btnClose2")
+      // } ,5000);
+      
+      // var timer3=setTimeout(function(){
+      // inactif("btnClose3")
+      // } ,5000);
+      
+      // var timer4=setTimeout(function(){
+      // inactif("btnClose4")
+      // } ,5000);
+      
+      /*$(document).on("submit", "#sms1",function(){submit("#sms11","#chatEntries1","#p1");resetActif("btnClose1","color1","#1abc9c");clearTimeout(timer1);
+      timer1=setTimeout(function(){
+      inactif("btnClose1","color1","mobileBtnClose1","mobilePanel1")
+      } ,5000);  
+      return false;  
+      });*/
+      /*$(document).on("submit", "#sms2",function(){submit("#sms22","#chatEntries2","#p2");resetActif("btnClose2","color2","#f1c40f");clearTimeout(timer2);
+      timer2=setTimeout(function(){
+      inactif("btnClose2","color2","mobileBtnClose2","mobilePanel2")
+      } ,5000);
+      return false;
+      });
+      $(document).on("submit", "#sms3",function(){submit("#sms33","#chatEntries3","#p3");resetActif("btnClose3","color3","#e74c3c");clearTimeout(timer3);
+      timer3=setTimeout(function(){
+      inactif("btnClose3","color3","mobileBtnClose3","mobilePanel3")
+      } ,5000);
+      return false;
+      });
+      $(document).on("submit", "#sms4",function(){submit("#sms44","#chatEntries4","#p4");resetActif("btnClose4","color4","#9b59b6");clearTimeout(timer4);
+      timer4=setTimeout(function(){
+      inactif("btnClose4","color4","mobileBtnClose4","mobilePanel4")
+      } ,5000);
+      return false;
+      });*/
+      //ouvrirEmptyRoom("#c1","c1","p1",data.rooms[0].id);
+      function ouvrirEmptyRoom(numero,roomid){
+      var  conteneur, p, mobileP, mobilePanel,mobileC, mobileColor, color;
+      if(numero==="1"){
+        conteneur="c1";
+        p="p1";
+        mobileP="mobileP1";
+        mobilePanel="mobilePanel1";
+        mobileC="mobileC1";
+        mobileColor="mobileColor1"
+        color="color1";
+      }else if(numero==="2"){
+        conteneur="c2";
+        p="p2";
+        mobileP="mobileP2";
+        mobilePanel="mobilePanel2";
+        mobileC="mobileC2";
+        mobileColor="mobileColor2";
+        color="color2";
+      }else if(numero==="3"){
+        conteneur="c3";
+        p="p3";
+        mobileP="mobileP3";
+        mobilePanel="mobilePanel3";
+        mobileC="mobileC3";
+        mobileColor="mobileColor3";
+        color="color3";
+      }else if(numero==="4"){
+        conteneur="c4";
+        p="p4";
+        mobileP="mobileP4";
+        mobilePanel="mobilePanel4";
+        mobileC="mobileC4";
+        mobileColor="mobileColor4";
+        color="color4";
+      }else{
+        console.log("erreur de numero dans ouvrirEmptyRoom");
+      }
+      /*$(conteneur_id).replaceWith('<div class="container" id='+conteneur+'><p class="display" id='+p+'>'+roomid+'</p><div class="text-center" id="ferme"><h1 id="white">chat libre</h1></div></div>');*/
+      $('#'+conteneur).replaceWith('<div class="container" id='+conteneur+'><p class="display" id='+p+'>'+roomid+'</p><div class="text-center" id='+color+'><h1 id="white">Room Libre</h1></div></div>');
+      /*$('#'+mobileP).closest('.row').replaceWith('<div class="row mid-width"><p class="display" id='+mobileP+'>'+roomid+'</p><ul class="button-group"> <li id="limite"><a class="button text-center" id='+mobilePanel+'><p id="white">Room Libre</p></a></li> </ul> </div>'); */
+      $('#'+mobileC).replaceWith('<div class="row mid-width" id='+mobileC+'><p class="display">'+roomid+'</p><div class="row mid-width"><p class="display" id='+mobileP+'>'+roomid+'</p><ul class="button-group"> <li id="limite"><a class="button text-center" id='+mobilePanel+'><p id="white">Room Libre</p></a></li> </ul> </div>'); 
+      }
+      
+      
+      function initiateRoomConnexion(data){
+      ouvrirEmptyRoom("1",data.rooms[0].id);
+      ouvrirEmptyRoom("2",data.rooms[1].id);
+      ouvrirEmptyRoom("3",data.rooms[2].id);
+      ouvrirEmptyRoom("4",data.rooms[3].id);
+      }
+      
+      /*ouvrirEmptyRoom("#c1","c1","p1","9876");
+      ouvrirEmptyRoom("#c2","c2","p2","9877");
+      ouvrirEmptyRoom("#c3","c3","p3","9878");
+      ouvrirEmptyRoom("#c4","c4","p4","9879");*/
+      
+      /*<div class="row mid-width" id="mobileC1">
+                <!--p class="display" id="mobileP1">5678</p>
+        <ul class="button-group">
+          <li><a class="tiny button" id="transfert"><span><i class="fa fa-group fa-2x"></i></span></a></li>
+          <li id="limite">
+            <a class="button text-center" id="mobilePanel1" onClick="changeToChat(this)">
+              <p id="white">17:58 Bonjour comment allez-vous ? Avez-vous besoins d'aide ? </p>
+            </a>
+          </li>
+          <li><a class="tiny button disabled" id="mobileBtnClose1"><span><i class="fa fa-times fa-2x"></i></span></a></li>
+        </ul-->
+              </div>*/
+      
+      /*<div id="mobileStock">    
+      <div class="container">
+                <p class="display" id="5679">5679</p>
+                <header class="top-bar" id="mobileColor2">
+                  <section class="left">
+                    <h4 class="text-center" id="white">BubbleWeb</h4>
+                  </section>
+                  <section class="right">
+                    <a class="tiny button" id="retour" onClick="retour(this)">
+                    <span><i class="fa fa-arrow-circle-o-left fa-3x"></i></span>
+                    </a>
+                  </section>
+                </header>
+                <div id="mobileChatEntries2">
+                </div>
+                <div class="row collapse">
+                  <form id="sms25679" onsubmit="submitMessage(this);resetActif('btnClose2');return false;">
+                    <div class="small-12 columns">
+                      <input type="text" id="sms225679" placeholder="Taper votre message" autocomplete="off" />
+                    </div>
+                  </form>
+                </div>
+              </div>*/
+      
+      var ouvrirFenetreId;
+      function ouvrirFenetre(idRoom){
+        console.log("hum");
+        var roomid = idRoom;
+        console.log("idRoom de ouvrirFenetre est:"+idRoom);
+        var roomidTemp;
+        if(document.getElementById("chatEntries1")){
+          if(document.getElementById("chatEntries2")){
+            if(document.getElementById("chatEntries3")){
+              if(document.getElementById("chatEntries4")){
+                console.log("non, plus de place pour chatter");
+                return false;
+              }else{
+                console.log("oui");
+                roomidTemp=$("#p4").text();
+                $("#c4").replaceWith('<div class="container" id="c4"> <header class="top-bar" id="color4"> <section class="left"> <a class="tiny button" data-reveal-id="firstModal" id="btnTransfert4"> <span><i class="fa fa-group fa-2x"></i></span> </a> </section> <section class="middle tab-bar-section"> <h4 class="text-center" id="white">BubbleWeb</h4> <p class="display" id="p4"></p> </section> <section class="right"> <a class="tiny button disabled" id="btnClose4"> <span><i class="fa fa-times fa-2x"></i></span> </a> </section> </header> <div id="chatEntries4"> </div> <div class="row collapse"> <form id="sms4" onsubmit="submitMessage(this);resetActif("btnClose4");return false;"><div class="large-12 columns"> <input type="text" id="sms44" placeholder="Taper votre message" autocomplete="off" /></div></form></div></div>');
+                $("#mobileC4").replaceWith('<div class="row mid-width" id="mobileC4"> <p class="display" id="mobileP4"></p> <ul class="button-group"> <li><a class="tiny button" data-reveal-id="firstModal" id="mobileBtnTransfert4"><span><i class="fa fa-group fa-2x"></i></span></a></li> <li id="limite"> <a class="button text-center" id="mobilePanel4" onClick="changeToChat(this)"> <p id="white">Ouverture du Chat</p></a></li><li><a class="tiny button disabled" id="mobileBtnClose4"><span><i class="fa fa-times fa-2x"></i></span></a></li> </ul> </div>');
+                $("mobileStock").append('<div class="container"> <p class="display" id="id4444"></p> <header class="top-bar" id="mobileColor4"> <section class="left"> <h4 class="text-center" id="white">BubbleWeb</h4> </section> <section class="right"> <a class="tiny button" id="retour" onClick="retour(this)"> <span><i class="fa fa-arrow-circle-o-left fa-3x"></i></span> </a> </section> </header> <div id="mobileChatEntries4"> </div> <div class="row collapse"> <form id="sms44bb" onsubmit="submitMessage(this);resetActif("btnClose4");return false;"> <div class="small-12 columns"> <input type="text" id="sms4444bb" placeholder="Taper votre message" autocomplete="off" /> </div> </form> </div> </div>'); 
+                if(roomid===undefined){
+                  roomid=roomidTemp;
+                }
+                ouvrirFenetreId=roomid;
+                $("#p4").text(roomid);
+                $("#mobileP4").text(roomid);
+                $("#id4444").attr("id",roomid);
+                $("#"+roomid).text(roomid);
+                $("#sms44bb").attr("id","sms4"+roomid);
+                $("#sms4444bb").attr("id","sms44"+roomid);
+                resetActif("btnClose4");
+                clearTimeout(timer4);
+                timer4=setTimeout(function(){
+                  inactif("btnClose4")
+                } ,5000);
+                return true;
+              }
+            }else{
+              console.log("oui");
+              roomidTemp=$("#p3").text();
+              $("#c3").replaceWith('<div class="container" id="c3"> <header class="top-bar" id="color3"> <section class="left"> <a class="tiny button" data-reveal-id="firstModal" id="btnTransfert3"> <span><i class="fa fa-group fa-2x"></i></span> </a> </section> <section class="middle tab-bar-section"> <h4 class="text-center" id="white">BubbleWeb</h4> <p class="display" id="p3"></p> </section> <section class="right"> <a class="tiny button disabled" id="btnClose3"> <span><i class="fa fa-times fa-2x"></i></span> </a> </section> </header> <div id="chatEntries3"> </div> <div class="row collapse"> <form id="sms3" onsubmit="submitMessage(this);resetActif("btnClose3");return false;"><div class="large-12 columns"> <input type="text" id="sms33" placeholder="Taper votre message" autocomplete="off" /></div></form></div></div>');
+              $("#mobileC3").replaceWith('<div class="row mid-width" id="mobileC3"> <p class="display" id="mobileP3"></p> <ul class="button-group"> <li><a class="tiny button" data-reveal-id="firstModal" id="mobileBtnTransfert3"><span><i class="fa fa-group fa-2x"></i></span></a></li> <li id="limite"> <a class="button text-center" id="mobilePanel3" onClick="changeToChat(this)"> <p id="white">Ouverture du Chat</p></a></li><li><a class="tiny button disabled" id="mobileBtnClose3"><span><i class="fa fa-times fa-2x"></i></span></a></li> </ul> </div>');
+              $("mobileStock").append('<div class="container"> <p class="display" id="id3333"></p> <header class="top-bar" id="mobileColor3"> <section class="left"> <h4 class="text-center" id="white">BubbleWeb</h4> </section> <section class="right"> <a class="tiny button" id="retour" onClick="retour(this)"> <span><i class="fa fa-arrow-circle-o-left fa-3x"></i></span> </a> </section> </header> <div id="mobileChatEntries3"> </div> <div class="row collapse"> <form id="sms33bb" onsubmit="submitMessage(this);resetActif("btnClose3");return false;"> <div class="small-12 columns"> <input type="text" id="sms3333bb" placeholder="Taper votre message" autocomplete="off" /> </div> </form> </div> </div>'); 
+              if(roomid===undefined){
+                roomid=roomidTemp;
+              } 
+              ouvrirFenetreId=roomid;
+              $("#p3").text(roomid);
+              $("#mobileP3").text(roomid);
+              $("#id3333").attr("id",roomid);
+              $("#"+roomid).text(roomid);
+              $("#sms33bb").attr("id","sms3"+roomid);
+              $("#sms3333bb").attr("id","sms33"+roomid);
+              //resetActif("btnClose3","color3","#e74c3c");
+              resetActif("btnClose3");
+              clearTimeout(timer3);
+              timer3=setTimeout(function(){
+                inactif("btnClose3")
+              } ,5000);
+              return true;
+            }
+          }else{
+            console.log("oui");
+            roomidTemp=$("#p2").text();
+            $("#c2").replaceWith('<div class="container" id="c2"> <header class="top-bar" id="color2"> <section class="left"> <a class="tiny button" data-reveal-id="firstModal" id="btnTransfert2"> <span><i class="fa fa-group fa-2x"></i></span> </a> </section> <section class="middle tab-bar-section"> <h4 class="text-center" id="white">BubbleWeb</h4> <p class="display" id="p2"></p> </section> <section class="right"> <a class="tiny button disabled" id="btnClose2"> <span><i class="fa fa-times fa-2x"></i></span> </a> </section> </header> <div id="chatEntries2"> </div> <div class="row collapse"> <form id="sms2" onsubmit="submitMessage(this);resetActif("btnClose2");return false;"><div class="large-12 columns"> <input type="text" id="sms22" placeholder="Taper votre message" autocomplete="off" /></div></form></div></div>');
+            $("#mobileC2").replaceWith('<div class="row mid-width" id="mobileC2"> <p class="display" id="mobileP2"></p> <ul class="button-group"> <li><a class="tiny button" data-reveal-id="firstModal" id="mobileBtnTransfert2"><span><i class="fa fa-group fa-2x"></i></span></a></li> <li id="limite"> <a class="button text-center" id="mobilePanel2" onClick="changeToChat(this)"> <p id="white">Ouverture du Chat</p></a></li><li><a class="tiny button disabled" id="mobileBtnClose2"><span><i class="fa fa-times fa-2x"></i></span></a></li> </ul> </div>');
+            $("mobileStock").append('<div class="container"> <p class="display" id="id2222"></p> <header class="top-bar" id="mobileColor2"> <section class="left"> <h4 class="text-center" id="white">BubbleWeb</h4> </section> <section class="right"> <a class="tiny button" id="retour" onClick="retour(this)"> <span><i class="fa fa-arrow-circle-o-left fa-3x"></i></span> </a> </section> </header> <div id="mobileChatEntries2"> </div> <div class="row collapse"> <form id="sms22bb" onsubmit="submitMessage(this);resetActif("btnClose2");return false;"> <div class="small-12 columns"> <input type="text" id="sms2222bb" placeholder="Taper votre message" autocomplete="off" /> </div> </form> </div> </div>'); 
+            if(roomid===undefined){
+              roomid=roomidTemp;
+            }
+            ouvrirFenetreId=roomid;
+            $("#p2").text(roomid);
+            $("#mobileP2").text(roomid);
+            $("#id2222").attr("id",roomid);
+            $("#"+roomid).text(roomid);
+            $("#sms22bb").attr("id","sms2"+roomid);
+            $("#sms2222bb").attr("id","sms22"+roomid);
+            //resetActif("btnClose2","color2","#f1c40f");
+            resetActif("btnClose2");
+            clearTimeout(timer2);
+            timer2=setTimeout(function(){
+              inactif("btnClose2")
+            } ,5000);  
+            return true;
+          }
+        }else{
+          console.log("oui");
+          roomidTemp=$("#p1").text();
+          $("#c1").replaceWith('<div class="container" id="c1"> <header class="top-bar" id="color1"> <section class="left"> <a class="tiny button" data-reveal-id="firstModal" id="btnTransfert1"> <span><i class="fa fa-group fa-2x"></i></span> </a> </section> <section class="middle tab-bar-section"> <h4 class="text-center" id="white">BubbleWeb</h4> <p class="display" id="p1"></p> </section> <section class="right"> <a class="tiny button disabled" id="btnClose1"> <span><i class="fa fa-times fa-2x"></i></span> </a> </section> </header> <div id="chatEntries1"> </div> <div class="row collapse"> <form id="sms1" onsubmit="submitMessage(this);resetActif("btnClose1");return false;"><div class="large-12 columns"> <input type="text" id="sms11" placeholder="Taper votre message" autocomplete="off" /></div></form></div></div>');
+          $("#mobileC1").replaceWith('<div class="row mid-width" id="mobileC1"> <p class="display" id="mobileP1"></p> <ul class="button-group"> <li><a class="tiny button" data-reveal-id="firstModal" id="mobileBtnTransfert1"><span><i class="fa fa-group fa-2x"></i></span></a></li> <li id="limite"> <a class="button text-center" id="mobilePanel1" onClick="changeToChat(this)"> <p id="white">Ouverture du Chat</p></a></li><li><a class="tiny button disabled" id="mobileBtnClose2"><span><i class="fa fa-times fa-2x"></i></span></a></li> </ul> </div>');
+          $("mobileStock").append('<div class="container"> <p class="display" id="id1111"></p> <header class="top-bar" id="mobileColor1"> <section class="left"> <h4 class="text-center" id="white">BubbleWeb</h4> </section> <section class="right"> <a class="tiny button" id="retour" onClick="retour(this)"> <span><i class="fa fa-arrow-circle-o-left fa-3x"></i></span> </a> </section> </header> <div id="mobileChatEntries1"> </div> <div class="row collapse"> <form id="sms11bb" onsubmit="submitMessage(this);resetActif("btnClose1");return false;"> <div class="small-12 columns"> <input type="text" id="sms1111bb" placeholder="Taper votre message" autocomplete="off" /> </div> </form> </div> </div>'); 
+          if(roomid===undefined){
+            roomid=roomidTemp;       
+          }
+          ouvrirFenetreId=roomid;
+          $("#p1").text(roomid);
+          $("#mobileP1").text(roomid);
+          $("#id1111").attr("id",roomid);
+          $("#"+roomid).text(roomid);
+          $("#sms11bb").attr("id","sms1"+roomid);
+          $("#sms1111bb").attr("id","sms11"+roomid);
+          //resetActif("btnClose1","color1","#1abc9c");
+          resetActif("btnClose1");
+          clearTimeout(timer1);
+          timer1=setTimeout(function(){
+            inactif("btnClose1")
+          } ,5000); 
+          return true;    
+        }
+      }
+      
+      
+      
+      /*socket.on('newVisitorAssigned', function(data){
+      console.log("new visitor");
+      ouvrirFenetre(data.roomId);
+      });*/
+      
+      
+    </script>
+    <script>
+      /*   var secon=0; //initialise les secondes
+         var minu=0; //initialise les minutes
+         var sec="00";
+         var min="00";
+      function chrono(socket_client_id){
+      
+           console.log("fonction chrono enclenchée");
+      
+      secon++; //incrémentation des secondes
+      if(secon<10){sec="0"+secon;}else{sec=secon;}
+      if(min<10){min="0"+minu;}else{min=minu;}
+      if (secon>59){secon=0;minu++;} //si les secondes > 59,on les réinitialise à 0 et on incrémente les minutes de 1
+      //document.getElementById(waiting).value=" "+minu+" "+secon; //on affiche les secondes
+      var id='#'+socket_client_id+'';
+      console.log(socket_client_id);
+      console.log(id);
+      $(id).replaceWith('<span class="info" id="'+socket_client_id+'">'+min+":"+sec+'</span>');
+      compte=setTimeout(function(){chrono(socket_client_id)},1000); //la fonction est relancée toutes les secondes
+      }
+      //chrono();*/
+      
+      
+      function chrono2(date,socket_client_id){
+       //date de la forme var d1 = new Date(2014,0,1); 1er janvier 2014
+       var date2=new Date();
+       var dDiff=new Date(date2-date);
+       var hour="00";
+       var min="00";
+       var sec="00";
+       hour=(dDiff.getHours() - 1);
+       min=(dDiff.getMinutes());
+       sec=(dDiff.getSeconds());
+       if(sec<10){sec="0"+sec;}
+       if(min<10){min="0"+min;}
+       if(hour<10){hour="0"+hour;}
+       var compteur=hour+":"+min+":"+sec;
+       var id='#'+socket_client_id+'';
+       //console.log(socket_client_id);
+       //console.log(id);
+       $(id).replaceWith('<span class="info" id="'+socket_client_id+'">'+compteur+'</span>');
+       compte=setTimeout(function(){chrono2(date,socket_client_id)},1000);
+      }
+      
+    </script>
+    <script>
+      /*var objDiv = document.getElementById("#chatEntries1");
+      if(objDiv.scrollTop === objDiv.scrollHeight){
+        objDiv.scrollTop = objDiv.scrollHeight;
+      }*/
+      var div = $('#chatEntries1');
+      if(div.scrollTop === div.scrollHeight){
+        div.scrollTop( div.scrollHeight )
+      };
+    </script>
+    <script>
+
+
+
+      //close("btnClose1","c1","p1",roomid, mobileP1,mobilePanel1);
+      function close(bouton,roomid){
+        var conteneur, p, mobileC, mobileP, mobilePanel, color;
+        if((bouton==="btnClose1") || (bouton==="mobileBtnClose1")){
+          conteneur="c1";
+          p="p1";
+          mobileC="mobileC1";
+          mobileP="mobileP1";
+          mobilePanel="mobilePanel1";
+          color="color1";
+        }else if((bouton==="btnClose2") || (bouton==="mobileBtnClose2")){
+          conteneur="c2";
+          p="p2";
+          mobileC="mobileC2";
+          mobileP="mobileP2";
+          mobilePanel="mobilePanel2";
+          color="color2";
+        }else if((bouton==="btnClose3") || (bouton==="mobileBtnClose3")){
+          conteneur="c3";
+          p="p3";
+          mobileC="mobileC3";
+          mobileP="mobileP3";
+          mobilePanel="mobilePanel3";
+          color="color3";
+        }else if((bouton==="btnClose4") || (bouton==="mobileBtnClose4")){
+          conteneur="c4";
+          p="p4";
+          mobileC="mobileC4";
+          mobileP="mobileP4";
+          mobilePanel="mobilePanel4";
+          color="color4";
+        }
+      
+          setRoomNotDisplayed(roomid);
+          $('#'+conteneur).fadeTo( 100, 0 );
+          setTimeout(function(){
+          if((document.getElementById(bouton).className==="tiny button") || (document.getElementById(bouton).className==="medium button")){ 
+          $('#'+conteneur).replaceWith('<div class="container" id='+conteneur+'><p class="display" id='+p+'>'+roomid+'</p><div class="text-center" id='+color+'><h1 id="white">Room Libre</h1></div></div>');
+          $('#'+mobileC).replaceWith('<div class="row mid-width" id='+mobileC+'><p class="display">'+roomid+'</p><div class="row mid-width"><p class="display" id='+mobileP+'>'+roomid+'</p><ul class="button-group"> <li id="limite"><a class="button text-center" id='+mobilePanel+'><p id="white">Room Libre</p></a></li> </ul> </div>'); 
+          $('#mobileStock').remove($('#'+roomid).parent());
+        }
+          },500);
+
+        // if((document.getElementById(bouton).className==="tiny button") || (document.getElementById(bouton).className==="medium button")){ 
+        //   $('#'+conteneur).replaceWith('<div class="container" id='+conteneur+'><p class="display" id='+p+'>'+roomid+'</p><div class="text-center" id='+color+'><h1 id="white">Room Libre</h1></div></div>');
+        //   $('#'+mobileC).replaceWith('<div class="row mid-width" id='+mobileC+'><p class="display">'+roomid+'</p><div class="row mid-width"><p class="display" id='+mobileP+'>'+roomid+'</p><ul class="button-group"> <li id="limite"><a class="button text-center" id='+mobilePanel+'><p id="white">Room Libre</p></a></li> </ul> </div>'); 
+        //   $('#mobileStock').remove($('#'+roomid).parent());
+        // }
+      }
+
+      /*<div id="mobileStock">    
+      <div class="container">
+                <p class="display" id="5679">5679</p>
+                <header class="top-bar" id="mobileColor2">
+                  <section class="left">
+                    <h4 class="text-center" id="white">BubbleWeb</h4>
+                  </section>
+                  <section class="right">
+                    <a class="tiny button" id="retour" onClick="retour(this)">
+                    <span><i class="fa fa-arrow-circle-o-left fa-3x"></i></span>
+                    </a>
+                  </section>
+                </header>
+                <div id="mobileChatEntries2">
+                </div>
+                <div class="row collapse">
+                  <form id="sms25679" onsubmit="submitMessage(this);resetActif('btnClose2');return false;">
+                    <div class="small-12 columns">
+                      <input type="text" id="sms225679" placeholder="Taper votre message" autocomplete="off" />
+                    </div>
+                  </form>
+                </div>
+              </div>*/
+      
+      /*<div class="container">
+                <p class="display" id="5680">5680</p>
+                <header class="top-bar" id="mobileColor3">
+                  <section class="left">
+                    <h4 class="text-center" id="white">BubbleWeb</h4>
+                  </section>
+                  <section class="right">
+                    <a class="tiny button" id="retour" onClick="retour(this)">
+                    <span><i class="fa fa-arrow-circle-o-left fa-3x"></i></span>
+                    </a>
+                  </section>
+                </header>
+                <div id="mobileChatEntries3">
+                </div>
+                <div class="row collapse">
+                  <form id="sms35680" onsubmit="submitMessage(this);resetActif('btnClose3');return false;">
+                    <div class="small-12 columns">
+                      <input type="text" id="sms335680" placeholder="Taper votre message" autocomplete="off" />
+                    </div>
+                  </form>
+                </div>
+              </div>*/
+      
+       /*<div class="row mid-width" id="mobileC1">
+                <!--p class="display" id="mobileP1">5678</p>
+        <ul class="button-group">
+          <li><a class="tiny button" id="transfert"><span><i class="fa fa-group fa-2x"></i></span></a></li>
+          <li id="limite">
+            <a class="button text-center" id="mobilePanel1" onClick="changeToChat(this)">
+              <p id="white">17:58 Bonjour comment allez-vous ? Avez-vous besoins d'aide ? </p>
+            </a>
+          </li>
+          <li><a class="tiny button disabled" id="mobileBtnClose1"><span><i class="fa fa-times fa-2x"></i></span></a></li>
+        </ul-->
+              </div>*/
+      
+      
+      /*<div class="row mid-width" id="mobileC1"> 
+            <p class="display">5681</p>
+            <ul class="button-group">
+              <li><a class="medium button" id="transfert"><span><i class="fa fa-group fa-2x"></i></span></a></li>
+              <li id="limite"><a class="button text-center" id="mobilepanel4" onClick="changeToChat(this)"><p id="white">Bonjour comment allez-vous ? Avez-vous besoins d'aide ?</p></a></li>
+              <li><a class="medium button disabled" id="mobileBtnClose4"><span><i class="fa fa-times fa-2x"></i></span></a></li>
+            </ul>
+          </div>
+      
+          <div class="row mid-width" id="mobileC1"> 
+            <p class="display">5682</p>
+            <ul class="button-group">        
+              <li id="limite"><a class="button text-center" id="mobilepanel1"><p id="white">Room Libre</p></a></li>
+            </ul>
+          </div>
+          */
+          //addVisitor(geolocalisation,idVisitor,url,connectionDate,visitorState){//normalState,isChatting, failedToAssignOperator, alreadyChatted
+      function setVisitors(data){
+        var visitorState;
+        for(j=0;j<data.visitors.length;j++){
+          visitorState="nomalState";
+          if(data.visitors[j].isChatting===true){
+            visitorState="isChatting";
+          }else if(data.visitors[j].failedToAssignOperator===true){
+            visitorState="failedToAssignOperator";
+          }else if(data.visitors[j].alreadyChatted===true){
+            visitorState="alreadyChatted";
+          }
+          addVisitor(data.visitors[j].geolocalisation,data.visitors[j].idVisitor,data.visitors[j].url,data.visitors[j].connectionDate,visitorSate);
+        }
+      }
+      
+      function setRooms(data){//roomid, display, activity, historique
+        for(j=0;j<data.rooms.length;j++){
+          if(data.rooms[j].is_displayed===true){
+            ouvrirFenetre(data.rooms[j].id);
+            if(data.rooms[j].is_active===false){
+              if(j===0){
+                inactif("btnClose1","color1","mobileBtnClose1","mobilePanel1");
+              }else if(j===1){
+                inactif("btnClose2","color2","mobileBtnClose2","mobilePanel2")
+              }else if(j===2){
+                inactif("btnClose3","color3","mobileBtnClose3","mobilePanel3")
+              }else if(j===3){
+                inactif("btnClose4","color4","mobileBtnClose4","mobilePanel4")
+              }
+      
+            }//TODO :else reprendre le timer où il en était
+            if(data.rooms[j].messages){
+              for(i=0;i<data.rooms[j].messages.length;i++){
+                if(data.rooms[j].messages[i].isAutomaticMessage===true){
+                  robotUrl(url,roomid);
+                }
+                else{
+                  if(data.rooms[j].messages[i].toVisitor===true){
+                    if(j===0){
+                      messageEnvoye(data.rooms[j].messages[i].content,"#chatEntries1","#p1",data.rooms[j].messages[i].date);
+                    }
+                    else if(j===1){
+                      messageEnvoye(data.rooms[j].messages[i].content,"#chatEntries2","#p2",data.rooms[j].messages[i].date);
+                    }
+                    else if(j===2){
+                      messageEnvoye(data.rooms[j].messages[i].content,"#chatEntries3","#p3",data.rooms[j].messages[i].date);
+                    }
+                    else if(j===3){
+                      messageEnvoye(data.rooms[j].messages[i].content,"#chatEntries4","#p4",data.rooms[j].messages[i].date);
+                    }
+                    else{
+                      console.log("erreur setRooms");
+                    }
+                  }
+                  else{
+                    recevoirMessage(data.rooms[j].messages[i].content,data.rooms[j].id,data.rooms[j].messages[i].date);
+                  }
+                }
+              }
+            }
+            
+          }else{
+            if(j===0){
+              ouvrirEmptyRoom("1",data.rooms[j].id);
+            }else if(j===1){
+              ouvrirEmptyRoom("2",data.rooms[j].id);
+            }else if(j===2){
+              ouvrirEmptyRoom("3",data.rooms[j].id);
+            }else if(j===3){
+              ouvrirEmptyRoom("4",data.rooms[j].id);
+            }
+          }
+      
+        }
+      }
+      //submit("#sms11","#chatEntries1","#p1")
+      //messageEnvoye(content,chatEntries,p,event,dateEnvoiMessage)
+      //robotUrl(url,roomid)
+      //recevoirMessage(message,roomid,dateReceptionMessage)
+      //submit(sms_xx, chatEntries, p, event,dateEnvoiMessage)
+      
+      function setAgents(socket_agent_id,etat){
+      
+      }
+      
+      function setNomStatutAgent(data){
+        //data.user.firstName data.user.status
+        $("#firstName").text(data.user.firstName);
+        if(data.user.status=="online"){
+          $("#connect").replaceWith('<a class="small success button" id="connect">Connecté</a>');
+        }else{
+          $("#connect").replaceWith('<a class="small alert button" id="deconnect">Déconnecté</a>');
+        }
+      }
+      
+      
+      
+      function initiatePage(data){
+        // data: nomAgent+état, 4 roomId+ouverteOuFermé+ActiveOuInactive+historique, visiteurs+état, agents+état, 
+        //historique:isAutomaticMessage, content, date, toVisitor
+      
+        // setNomStatutAgent(data);
+        // setRooms(data);
+
+      
+      }
+      
+      $(document).on('click', "#btnClose1",function(){
+        console.log("clique sur boutonClose1");
+        var roomid=$("#p1").text();
+        close("btnClose1",roomid);
+        //socket.emit('setRoomNotDisplayed', {roomId: roomid}); 
+      });
+      $(document).on('click', "#btnClose2",function(){
+        var roomid=$("#p2").text();
+        close("btnClose2",roomid);
+        //socket.emit('setRoomNotDisplayed', {roomId: roomid}); 
+      });
+      $(document).on('click', "#btnClose3",function(){
+        var roomid=$("#p3").text();
+        close("btnClose3",roomid);
+        //socket.emit('setRoomNotDisplayed', {roomId: roomid});
+      });
+      $(document).on('click', "#btnClose4",function(){
+        var roomid=$("#p4").text();
+        close("btnClose4",roomid);
+        //socket.emit('setRoomNotDisplayed', {roomId: roomid});
+      });
+      
+      $(document).on('click',"#mobileBtnClose1",function(){
+        var roomid=$("#p1").text();
+        close("btnClose1",roomid);
+        //socket.emit('setRoomNotDisplayed', {roomId: roomid}); 
+      });
+      $(document).on('click',"#mobileBtnClose2",function(){
+        var roomid=$("#p2").text();
+        close("btnClose2",roomid);
+        //socket.emit('setRoomNotDisplayed', {roomId: roomid}); 
+      });
+      $(document).on('click',"#mobileBtnClose3",function(){
+        var roomid=$("#p3").text();
+        close("btnClose3",roomid);
+        //socket.emit('setRoomNotDisplayed', {roomId: roomid}); 
+      });
+      $(document).on('click',"#mobileBtnClose4",function(){
+        var roomid=$("#p4").text();
+        close("btnClose4",roomid);
+        //socket.emit('setRoomNotDisplayed', {roomId: roomid}); 
+      });
+    </script>
+    <script>
+      /*<div class="row full-width" id="visitorLibre"> 
+                            <p class="display" id="visiteur">4321</p>
+                            <div class="small-6 columns text-center">
+                              <h5 id="white">France, Nancy<p>url en cours, chat possible</p></h5> 
+                            </div>
+                            <div class="small-6 columns text-center">
+                              <a class="small radius button" onclick="if(($(this).attr('class'))==='small radius button'){if(ouvrirFenetre()===true){var id=$(this).parent().siblings('p').text();changeStatutVisitor(id,'isChatting');}}">Chatter 
+                                <span class="info" id="4321"></span></a>
+                            </div>
+                            </div>*/
+      
+      function clique(item){
+        console.log("clique");
+        if(($(item).attr('class'))==='small radius button'){
+          if(ouvrirFenetre()===true){
+            var id=$(item).parent().siblings('p').text();
+            changeStatutVisitor(id,'isChatting');
+            socket.emit('changeStatutVisitor', {roomId: ouvrirFenetreId, visitorId: id});
+          }
+        }
+      }
+      
+      function addVisitor(geolocalisation,socket_client_id,url,date,visitorState){//normalState,isChatting, failedToAssignOperator, alreadyChatted
+      
+        console.log("fonction addVisitor enclenchée");
+        console.log("part:"+visitorState);
+        console.log("visiteur Libre:" + visiteurLibre);
+        if(visitorState==="normalState"){
+         $(visiteurLibre).append('<div class="row full-width" id="visitorLibre"> <p class="display" id="visiteur">'+socket_client_id+'</p> <div class="small-6 columns text-center"> <h5 id="white">'+geolocalisation+'<p>'+url+'</p></h5> </div> <div class="small-6 columns text-center"> <a class="small radius button" onClick="clique(this)">Chatter <span class="info" id="'+socket_client_id+'"></span></a> </div> </div>'); 
+       }
+       else if(visitorState==="isChatting"){
+        $(visiteurOccupe).append('<div class="row full-width" id="visitorOccupe"> <p class="display" id="idclient">'+socket_client_id+'</p> <div class="small-6 columns text-center"> <h5 id="white">'+geolocalisation+'<p>'+url+'</p></h5> </div> <div class="small-6 columns text-center"> <a class="small radius button disabled" onClick="clique(this)">Chatter <span class="info" id="'+socket_client_id+'"></span></a> </div> </div>'); 
+      }else if(visitorState==="failedToAssignOperator"){
+        $(visiteurEchec).append('<div class="row full-width" id="visitorEchec"> <p class="display" id="idclient">'+socket_client_id+'</p> <div class="small-6 columns text-center"> <h5 id="white">'+geolocalisation+'<p>'+url+'</p></h5> </div> <div class="small-6 columns text-center"> <a class="small radius button" onClick="clique(this)">Chatter <span class="info" id="'+socket_client_id+'"></span></a> </div> </div>');
+      }else if(visitorState==="alreadyChatted"){
+       $(visiteurDejaChat).append('<div class="row full-width" id="visitorDejaChat"> <p class="display" id="idclient">'+socket_client_id+'</p> <div class="small-6 columns text-center"> <h5 id="white">'+geolocalisation+'<p>'+url+'</p></h5> </div> <div class="small-6 columns text-center"> <a class="small radius button disabled" onClick="clique(this)">Chatter <span class="info" id="'+socket_client_id+'"></span></a> </div> </div>');
+      }
+      
+        //var date=new Date();
+        robotUrl("youtube.com","9876");
+        chrono2(date,socket_client_id);
+        
+      }
+      
+       /*$("#ouvrir").click(function(){
+          ouvrirFenetre();
+          var id=$("#ouvrir").parent().siblings('p').text();
+          console.log('id visiteur:'+id+' ');
+          changeStatutVisitor(id,"isChatting");
+        });*/
+      
+      function deleteVisitor(socket_client_id){
+        console.log("fonction deleteVisitor enclenchée");
+        var id='#'+socket_client_id;
+        console.log(id);
+        $(id).closest('.row').remove();
+      }
+      
+      function changeStatutVisitor(socket_client_id, statut){
+        //isChatting, failedToAssignOperator, alreadyChatted
+        var id='#'+socket_client_id;
+        var etat;
+        if(statut==="isChatting"){
+          etat="visitorOccupe";
+          $(id).closest('a').attr("class","small radius button disabled");
+          changerPlaceVisitor(id,'#visiteurOccupe');   
+        }else if(statut==="failedToAssignOperator"){
+          etat="visitorEchec";
+          changerPlaceVisitor(id,'#visiteurEchec');
+        }else if(statut==="alreadyChatted"){
+          etat="visitorDejaChat";
+          $(id).closest('a').attr("class","small radius button disabled");
+          changerPlaceVisitor(id,'#visiteurDejaChat');
+        }else{
+          console.log("problème dans changeStatutVisitor");
+        }
+      
+        $(id).closest('.row').attr("id",etat);
+        
+      }
+      
+      function changerPlaceVisitor(id,zone){
+        $(id).closest('.row').detach().appendTo(zone);
+      }
+      
+      
+      
+                        
+      
+      
+      
+      function addAgent(socket_agent_id){
+      
+      }
+      
+      function deleteAgent(socket_agent_id){
+      
+      }
+      
+       /* socket.on('newClientConnected', function(data){
+          console.log("new client");
+          addVisitor(data.geolocalisation, data.socket_client_id, data.url);
+          //ouvrirFenetre(data.roomId);
+        });*/
+      
+      function robotUrl(url,roomid){
+        console.log("robotUrl enclenché");
+        if($("#p1").text()===roomid){
+          console.log("robot1 ok");
+          $("#chatEntries1").append('<br/><div id="ligne"><p class="text-center" id="purple">---page actuelle du client:<a href='+url+' target="_blank">'+url+'</a>---</p></div>');
+        }else if($("#p2").text()===roomid){
+          $("#chatEntries2").append('<br/><div id="ligne"><p class="text-center" id="purple">---page actuelle du client:<a href='+url+' target="_blank">'+url+'</a>---</p></div>');
+        }else if($("#p3").text()===roomid){
+          $("#chatEntries3").append('<br/><div id="ligne"><p class="text-center" id="purple">---page actuelle du client:<a href='+url+' target="_blank">'+url+'</a>---</p></div>');
+        }else if($("#p4").text()===roomid){
+          $("#chatEntries4").append('<br/><div id="ligne"><p class="text-center" id="purple">---page actuelle du client:<a href='+url+' target="_blank">'+url+'</a>---</p></div>');
+        }else{
+          console.log("bug robot url");
+        } 
+      
+      }
+      
+      $(document).on('click', "#new",function(){
+        var date=new Date(); // à supprimer lors du raccord avec le serveur
+        addVisitor("Nancy", "abc12345", "monsite.com",date);
+      });
+      
+      $(document).on('click', "#old",function(){
+        deleteVisitor("abc12345");
+      });
+      
+      $(document).on('click', "#connect",function(){
+        console.log("Conecté");
+        $("#connect").replaceWith('<a class="small alert button" id="deconnect">Déconnecté</a>');
+      });
+      $(document).on('click', "#deconnect",function(){
+        $("#deconnect").replaceWith('<a class="small success button" id="connect">Connecté</a>');
+      });
+      
+      /*newClientConnected geolocalisation socket_client_id url*/
+      
+      
+      
+    </script>
+    <script>
+      function retour(item){
+        console.log("retour");
+        var id=$(item).parent().parent().siblings('p').text();
+        console.log(id);
+        $('#'+id).closest('.container').detach().appendTo("#mobileStock");
+        $("#mobileChat").detach().appendTo("#mobileVisible");
+      
+      }
+      
+      function changeToChat(item){
+        console.log("changeToChat");
+        var id=$(item).parent().parent().siblings('p').text();
+        console.log(id);
+        $("#mobileChat").detach().appendTo("#mobileTemp");
+        $('#'+id).closest('.container').detach().appendTo("#mobileVisible");
+      }
+      
+      function getWindowHeight() {
+        var windowHeight=0;
+        if (typeof(window.innerHeight)=='number') {
+          windowHeight=window.innerHeight;
+        }
+        else {
+         if (document.documentElement&&
+           document.documentElement.clientHeight) {
+           windowHeight = document.documentElement.clientHeight;
+       }
+       else {
+         if (document.body&&document.body.clientHeight) {
+           windowHeight=document.body.clientHeight;
+         }
+       }
+      }
+      return windowHeight;
+      }
+      
+      console.log("la hauteur de la fenetre pour mobile:"+(getWindowHeight()-162));
+      
+      var timerClign1, timerClign2, timerClign3, timerClign4;
+      function FaireClignoterImage (numero){
+        var c="#color"+numero;
+        var m="#mobilePanel"+numero; 
+        $(c).fadeTo( 100, 0 ).delay(50).fadeTo(300,100);
+        $(m).fadeTo( 100, 0 ).delay(50).fadeTo(300,100);
+      }
+      /*
+      timerClign1=setInterval(function(){
+          FaireClignoterImage("1")
+        } ,1000); 
+      timerClign2=setInterval(function(){
+          FaireClignoterImage("2")
+        } ,1000); 
+      timerClign3=setInterval(function(){
+          FaireClignoterImage("3")
+        } ,1000); 
+      timerClign4=setInterval(function(){
+          FaireClignoterImage("4")
+        } ,1000); 
+      */
+      
+      $(document).on('click', "#c1",function(){
+        clearTimeout(timerClign1);
+      });
+      $(document).on('click', "#mobilePanel1",function(){
+        clearTimeout(timerClign1);
+      });
+      $(document).on('click', "#c2",function(){
+        clearTimeout(timerClign2);
+      });
+      $(document).on('click', "#mobilePanel2",function(){
+        clearTimeout(timerClign2);
+      });
+      $(document).on('click', "#c3",function(){
+        clearTimeout(timerClign3);
+      });
+      $(document).on('click', "#mobilePanel3",function(){
+        clearTimeout(timerClign3);
+      });
+      $(document).on('click', "#c4",function(){
+        clearTimeout(timerClign4);
+      });
+      $(document).on('click', "#mobilePanel4",function(){
+        clearTimeout(timerClign4);
+      });
+      
+      
+      var audio = $("#chatAudio")[0];
+      //audio.play();
+      
+       /*if(($("#sms11")).is(":focus")){
+         alert("focus");
+       }*/
+      /*$("#sms11").focus(function () {
+              alert("focus");
+            }*/
+      
+            
+    </script>
+    <script>
+      $(document).foundation();
+    </script>
+  </body>
+</html>
+

@@ -1,0 +1,362 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BubbleWeb</title>
+  <link rel="stylesheet" href="css/visiteur.css" />
+</head> 
+<body>
+    <button id="assign">test </button>
+    <button id="quitter">quitter </button>
+    <button id="deleteSession">delete session </button>
+
+
+    <div class="row-bubbleweb" id="vue-bubbleweb">
+
+        <div class="display-bubbleweb" id="cache-bubbleweb">
+
+          <div id="move-bubbleweb">
+            <div class="container" id="cVisitor-bubbleweb">
+                <header class="top-bar-bubbleweb" id="colorVisitor-bubbleweb">
+                  <section class="left-bubbleweb">
+                    <div id="moncercle-bubbleweb"></div>
+                    <div id="moncercle-bubbleweb"></div>
+                    <div id="moncercle-bubbleweb"></div>
+                    <div id="moncercle-bubbleweb"></div>
+                    <div id="moncercle-bubbleweb"></div>
+                  </section>
+                  <section class="left-bubbleweb">
+                    <div id="moncercle-bubbleweb"></div>
+                    <div id="moncercle-bubbleweb"></div>
+                    <div id="moncercle-bubbleweb"></div>
+                    <div id="moncercle-bubbleweb"></div>
+                    <div id="moncercle-bubbleweb"></div>
+                  </section>
+                  <section class="left-bubbleweb">
+                    <div id="moncercle-bubbleweb"></div>
+                    <div id="moncercle-bubbleweb"></div>
+                    <div id="moncercle-bubbleweb"></div>
+                    <div id="moncercle-bubbleweb"></div>
+                    <div id="moncercle-bubbleweb"></div>
+                  </section>
+                  <section class="left-bubbleweb">
+                    <div id="moncercle-bubbleweb"></div>
+                    <div id="moncercle-bubbleweb"></div>
+                    <div id="moncercle-bubbleweb"></div>
+                    <div id="moncercle-bubbleweb"></div>
+                    <div id="moncercle-bubbleweb"></div>
+                  </section>
+                  <section class="left-bubbleweb">
+                    <div id="moncercle-bubbleweb"></div>
+                    <div id="moncercle-bubbleweb"></div>
+                    <div id="moncercle-bubbleweb"></div>
+                    <div id="moncercle-bubbleweb"></div>
+                    <div id="moncercle-bubbleweb"></div>
+                  </section>
+                  <section class="middle-bubbleweb tab-bar-section-bubbleweb">
+                    <h4 class="text-center-bubblewbeb" style="margin-top:10px;color:white;" id="nomAgent-bubbleweb">Suzy</h4>
+                  </section>
+                  <section class="right-bubbleweb">
+                    <a class="tiny-bubbleweb button-bubbleweb" id="discuss">
+                      <span><i class="fa-bubbleweb fa-bubbleweb-times fa-bubbleweb-2x" onClick="aide();visitorClosingRoom();"></i></span>
+                    </a>
+                  </section>
+                </header>
+
+                <div id="chatEntriesVisitor-bubbleweb">
+                </div>
+
+                <div class="row-bubbleweb collapse-bubbleweb">
+                  <form id="smsVisitor">
+
+                    
+                     <div class="large-12-bubbleweb columns-bubbleweb ">
+                     
+                            <input type="text" id="smsVisitor2" placeholder="Taper votre message" autocomplete="off"/>
+                            
+                            <button class="tiny-bubbleweb text-right-bubbleweb" id="envoi-bubbleweb">
+                               <!-- <span><i class="fa-bubbleweb fa-bubbleweb-arrow-circle-o-right fa-bubbleweb-2x" onClick=""></i></span> -->
+                               Envoi
+                            </button> 
+                    </div>         
+                  </form>
+                </div>
+            </div>
+          </div> 
+
+
+          <div id="moveMailBox-bubbleweb">
+            <div class="container" id="cVisitorMailBox-bubbleweb">
+                <header class="top-bar-bubbleweb" id="colorVisitorMailBox-bubbleweb">
+                  <section class="left-bubbleweb">
+                    <h4 class="text-center-bubbleweb" id="white-bubbleweb">BubbleWeb: Envoi Email</h4>
+                    <p class="display-bubbleweb" id="pVisitor-bubbleweb">5679</p>
+                  </section>
+                  <section class="right-bubbleweb">
+                    <a class="tiny-bubbleweb button-bubbleweb" id="discuss">
+                    <span><i class="fa-bubbleweb fa-bubbleweb-times fa-bubbleweb-2x" onClick="aide()"></i></span>
+                    </a>
+                  </section>
+                </header>
+
+                <div id="chatEntriesVisitorMailBox-bubbleweb">
+                  <div class="large-12-bubbleweb columns-bubbleweb">
+                    <div class="email-field">
+                      <label>Email <small>required</small>
+                        <input type="email" placeholder="Taper votre Email." id="emailVisitor-bubbleweb">
+                      </label>
+                    </div>
+                  </div>
+                  <div class="large-12-bubbleweb columns-bubbleweb">
+                    <label>Votre message <small>required</small></label>
+                      <textarea placeholder="Taper votre message." id="mailContent-bubbleweb"></textarea>
+                  </div>
+                  <div class="large-12-bubbleweb columns-bubbleweb text-right-bubbleweb">
+                    <a class="tiny-bubbleweb button-bubbleweb" onClick="envoiMailBubbleweb()">Envoyer</a>
+                  </div>
+
+                </div>
+            </div>
+          </div> 
+
+
+
+
+        </div>
+
+        
+        <div class="bubbleweb" id="bottomVue-bubbleweb">
+          <!--button class="text-center-bubbleweb" id="help-bubbleweb" onClick="openMailBox()">  Avez vous besoin d'aide?   <span><i class="fa-bubbleweb fa-bubbleweb-caret-square-o-up fa-bubbleweb-2x"></i></span></button-->
+          <button class="text-center-bubbleweb" id="help-bubbleweb">  Avez vous besoin d'aide?   <span><i class="fa-bubbleweb fa-bubbleweb-caret-square-o-up fa-bubbleweb-2x"></i></span></button>
+        </div>
+        
+        
+    </div>
+    
+
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.min.js"></script>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <!--script src="js/vendor/jquery.js"></script-->
+    <script id="bubbleWebScript" src="js/client.js?website=test"></script>
+    <script>
+
+      var lienPhoto;
+      function addMessageFromOperator(message,dateMessage,urlphoto){
+          var date=new Date(dateMessage);
+          var hour="00";
+          var min="00";
+          if(date.getHours()<10){
+              hour="0"+date.getHours();
+          }else{
+              hour=date.getHours();
+          }
+          if(date.getMinutes()<10){
+              min="0"+date.getMinutes();
+          }else{
+              min=date.getMinutes();
+          }
+
+              $("#chatEntriesVisitor-bubbleweb").append('<br/><div id="ligne-bubbleweb"><div id="profilePic"> <img class="image" src="images/suzy.jpg" alt="Beauty Suzy" height="40" width="40"> </div><div id="triangleOtherVisitor-bubbleweb"></div><div id="other-bubbleweb">'+message+'<p class="infos text-right-bubbleweb">'+hour+':'+min+'</p></div></div>'); }
+
+     // var sentenceHorizontale=$('#help').text();
+     // var sentenceVerticale=[];
+     //  profilePicAgent-bubbleweb,  nomAgent-bubbleweb
+
+     function setAgent(urlPhoto,nomAgent){
+      lienPhoto=urlPhoto;
+      $("#profilePicAgent-bubbleweb").attr('src',urlPhoto);
+      $("#nomAgent-bubbleweb").text(nomAgent);
+    }
+
+
+
+    function openChat(){
+      $('#bottomVue-bubbleweb').detach().appendTo('#cache-bubbleweb');
+      $('#topVue-bubbleweb').detach().appendTo('#cache-bubbleweb');
+      $('#rotateRight-bubbleweb').detach().appendTo('#cache-bubbleweb');
+      $('#rotateLeft-bubbleweb').detach().appendTo('#cache-bubbleweb');
+      $('#move-bubbleweb').detach().appendTo('#vue-bubbleweb');
+    }
+
+    function openMailBox(){
+      $('#bottomVue-bubbleweb').detach().appendTo('#cache-bubbleweb');
+      $('#topVue-bubbleweb').detach().appendTo('#cache-bubbleweb');
+      $('#rotateRight-bubbleweb').detach().appendTo('#cache-bubbleweb');
+      $('#rotateLeft-bubbleweb').detach().appendTo('#cache-bubbleweb');
+      $('#moveMailBox-bubbleweb').detach().appendTo('#vue-bubbleweb');
+    }
+
+    function aide(){
+      $('#move-bubbleweb').detach().appendTo('#cache-bubbleweb');
+      $('#moveMailBox-bubbleweb').detach().appendTo('#cache-bubbleweb');
+      $('#chatEntriesVisitor-bubbleweb').empty();
+      $('#bottomVue-bubbleweb').detach().appendTo('#vue-bubbleweb');
+      $('#topVue-bubbleweb').detach().appendTo('#vue-bubbleweb');
+      $('#rotateRight-bubbleweb').detach().appendTo('#vue-bubbleweb');
+      $('#rotateLeft-bubbleweb').detach().appendTo('#vue-bubbleweb');
+    }
+
+    function verifierMail(mail) {
+      if ((mail.indexOf("@")>=0)&&(mail.indexOf(".")>=0)) {
+         return true;
+      } else {
+         return false;
+      }
+   }
+
+    function envoiMailBubbleweb(){
+      var email, content;
+      if($('#emailVisitor-bubbleweb').val()==='' || $('#mailContent-bubbleweb').val()===''){
+        alert("Votre message est vide ou vous avez oublié de taper votre adresse email.");
+      }else if(verifierMail($('#emailVisitor-bubbleweb').val())===false){
+        alert("Votre email est invalide.");
+      }else{
+        email= $('#emailVisitor-bubbleweb').val();
+        content= $('#mailContent-bubbleweb').val();
+        $('#emailVisitor-bubbleweb').val('');
+        $('#mailContent-bubbleweb').val('');
+      }
+    }
+
+    function cacherBoutonAide(){
+      $('#bottomVue-bubbleweb').attr('class','display-bubbleweb');
+      $('#topVue-bubbleweb').attr('class','display-bubbleweb');
+      $('#rotateRight-bubbleweb').attr('class','display-bubbleweb');
+      $('#rotateLeft-bubbleweb').attr('class','display-bubbleweb');
+
+    }
+
+    // TODO : initier la bonne position du bouton 
+    function robotNotificationVisitor(notification, dateNotif){
+      var date= new Date(dateNotif);
+      $("#chatEntriesVisitor-bubbleweb").append('<br/><div id="ligne"><p class="text-center-bubbleweb" id="purple-bubbleweb">---'+date+' : '+notification+'---</p></div>');
+    }
+
+
+    function initiatePageVisitor(data){
+      if(data.disableOffline === false){
+        if(data.operatorsOnline===true){
+          if(data.isChatting===true){
+              openChat();
+              console.log("open chat");
+            setAgent(data.operatorPicture,data.operatorFirstName);
+            $('#chatEntriesVisitor-bubbleweb').empty();
+            for(i=0; i<data.messages.length;i++){
+              if(data.messages[i].isAutomaticMessage===true){
+                robotNotificationVisitor(data.messages[i].content, data.messages[i].date);
+              }else{
+                  var date1=new Date(data.messages[i].date);
+                  var hour,min;
+                  if(date1.getHours()<10){
+                    hour="0"+date1.getHours();
+                  }else{
+                    hour=date1.getHours();
+                  }
+                   if(date1.getMinutes()<10){
+                    min="0"+date1.getMinutes();
+                  }else{
+                    min=date1.getMinutes();
+                  }
+                if(data.messages[i].toVisitor===true){
+                  $("#chatEntriesVisitor-bubbleweb").append('<br/><div id="ligne-bubbleweb"><div id="profilePic"> <img class="image" src="images/suzy.jpg" alt="Beauty Suzy" height="40" width="40"> </div>  <div id="triangleOtherVisitor-bubbleweb"></div><div id="other-bubbleweb">'+data.messages[i].content+'<p class="infos text-right-bubbleweb">'+hour+':'+min+'</p></div></div>');
+                }else{
+                  
+                  $("#chatEntriesVisitor-bubbleweb").append('<br/><div id="ligne-bubbleweb"><div id="triangleSelfVisitor-bubbleweb"></div><div id="self-bubbleweb">'+data.messages[i].content+'<p class="infos text-right-bubbleweb">'+hour+':'+min+'</p></div></div>');
+                }
+              }
+            }
+          }else{
+            aide();
+          }  
+        }else{
+          aide();
+        }
+      }
+    }
+
+    // Array.prototype.insert = function (index, item) {
+    //     this.splice(index, 0, item);
+    //   };
+
+    // function changerTextVertical(sentence){
+    //   for(i=0;sentence.length;i++){
+    //     sentenceVerticale.push(sentence.charAt(i));
+    //   }
+    //    for (i=0; i < (sentence.length)-1; i++){
+    //     sentenceVerticale.insert((i+1),"\n");
+    //    }
+      
+    // }
+   
+   // changerTextVertical(sentenceHorizontale);
+   // alert(sentenceVerticale);
+
+    function getWindowHeight() {
+        var windowHeight=0;
+        if (typeof(window.innerHeight)=='number') {
+          windowHeight=window.innerHeight;
+        }else{
+            if (document.documentElement && document.documentElement.clientHeight){
+                windowHeight = document.documentElement.clientHeight;
+            }else{
+                if (document.body&&document.body.clientHeight) {
+                    windowHeight=document.body.clientHeight;
+                }
+            }
+        }
+        return windowHeight;
+    }
+
+    function getWindowWidth() {
+        var windowWidth=0;
+        if (typeof(window.innerWidth)=='number') {
+          windowWidth=window.innerWidth;
+        }else{
+            if (document.documentElement && document.documentElement.clientWidth){
+                windowWidth = document.documentElement.clientWidth;
+            }else{
+                if (document.body&&document.body.clientWidth) {
+                    windowWidth=document.body.clientWidth;
+                }
+            }
+        }
+        return windowWidth;
+    }
+
+    var x2,y2;
+    window.onresize = function() {
+      resetDraggable();
+    };
+
+     // var x = document.getElementById('chatEntriesVisitor-bubbleweb').offsetWidth; //220
+     // var y = document.getElementById('chatEntriesVisitor-bubbleweb').offsetHeight; //300
+
+     function resetDraggable(){
+      x2=getWindowWidth()-225; //1370
+      y2=getWindowHeight()-410; //330
+    
+      $("#cVisitor-bubbleweb").draggable({ containment: [5,5,x2,y2] });
+      $("#cVisitorMailBox-bubbleweb").draggable({ containment: [5,5,x2,y2] });
+
+      $("#cVisitor-bubbleweb").offset({ bottom: 0, right: 5});
+      $("#cVisitorMailBox-bubbleweb").offset({ bottom: 0, right: 5});
+     }
+     
+     resetDraggable();
+
+
+
+    // x2=getWindowWidth()-225; //1370
+    // y2=getWindowHeight()-410; //330
+    // //alert("x = "+x+" ; y = "+y);
+
+    // $("#cVisitor-bubbleweb").draggable({ containment: [5,5,x2,y2] });
+    // $("#cVisitorMailBox-bubbleweb").draggable({ containment: [5,5,x2,y2] });
+
+</script>
+
+</body>
+</html>
