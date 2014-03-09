@@ -29,8 +29,8 @@ module.exports.allStatistics = allStatistics;
 
 
 var connectionToMongodb = function(){
-	mongoose.connect("mongodb://admin:pVR5gkPwQE7N@127.0.0.1:27017/bbweb",function(err){
-  // mongoose.connect("mongodb://"+dbUser+":"+dbPass+"@"+dbHost+":"+dbPort+"/bbweb", function(err) {
+	mongoose.connect("mongodb://admin:pVR5gkPwQE7N@127.5.19.130:27017/bbweb",function(err){
+   // mongoose.connect("mongodb://"+dbUser+":"+dbPass+"@"+dbHost+":"+dbPort+"/bbweb", function(err) {
     if (err) { throw err; }
   });
 };
