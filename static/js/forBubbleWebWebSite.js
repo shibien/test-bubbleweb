@@ -1,4 +1,4 @@
-var socket = io.connect('http://localhost:8686');
+var socket = io.connect('window.location.hostname');
 
 $("#addOperatorForm").submit(function( event ) {
 	console.log("submit");
