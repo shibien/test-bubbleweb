@@ -20,8 +20,8 @@ module.exports.allStatistics = allStatistics;
 
  var dbUser = process.env.OPENSHIFT_MONGODB_DB_USERNAME;
  var dbPass = process.env.OPENSHIFT_MONGODB_DB_PASSWORD; 
- var dbHost = process.env.OPENSHIFT_MONGODB_DB_HOST;
- var dbPort = parseInt(process.env.OPENSHIFT_MONGODB_DB_PORT);
+ var dbHost = process.env.OPENSHIFT_MONGODB_DB_HOST || '127.0.0.1';
+ var dbPort = parseInt(process.env.OPENSHIFT_MONGODB_DB_PORT) || '27017';
 
 //var user = require('./user/models/user');
 // On se connecte à la base de données
@@ -29,8 +29,8 @@ module.exports.allStatistics = allStatistics;
 
 
 var connectionToMongodb = function(){
-
-  mongoose.connect("mongodb://"+dbUser+":"+dbPass+"@"+dbHost+":"+dbPort+"/blog", function(err) {
+	mongoose.connect("mongodb://admin:pVR5gkPwQE7N@127.0.0.1:27017/bbweb",function(err)){
+  // mongoose.connect("mongodb://"+dbUser+":"+dbPass+"@"+dbHost+":"+dbPort+"/bbweb", function(err) {
     if (err) { throw err; }
   });
 };
