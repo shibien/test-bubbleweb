@@ -6,7 +6,7 @@ var room = require('./Database/Room');
 var website = require('./Database/Website');
 var user = mongoose.model("User");
 var visitor = require('./Database/Visitor');
-var allStatistics = require('./Database/allStatistics');
+var allStatistics = require('./Database/AllStatistics');
 
 
 module.exports.mongoose = mongoose;
