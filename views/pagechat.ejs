@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset = "utf-8" />
+		<title> BubbleWeb </title>
+		<link rel="stylesheet" href="css/main.css" />
+		<link href="images/logo.png" rel="shortcut icon">
+         <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+         <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.js"></script>
+         <script src="/socket.io/socket.io.js"></script>
+         <script src="js/main.js"></script>
+	</head>
+
+	<body>
+		<div class="navbar navbar-inverse navbar-fixed-top">
+        <div ><a class="brand" href="#">BubbleWeb Chat</a>
+            <ul class="nav">
+                <li class="active"><a href="#">Messagerie</a>
+                </li>
+                <li>
+                    <div class="span3" id="largeurNavigation"></div>
+                </li>
+                <li>
+                    <div class="profilePic">
+                        <img class="image" src="images/suzy.jpg" alt="Beauty Suzy" height="100" width="100">
+                    </div>                
+                </li>
+                <li>
+                    <h3>Suzy</h3>
+                </li>
+                <li>
+                    <button class="btn btn-info">Statut<i class="icon-user "></i></button>
+                </li>
+                <li>
+                    <div class="dropdown"><a class="btn dropdown-toggle" data-toggle="dropdown" href="#">Paramètres
+                    <i class="icon-cog "></i></i><span class="caret"></span></a>
+                    <ul class="dropdown-menu"><li><a href="#">Profile</a></li><li><a href="#">Statistiques</a></li>
+                    <li><a href="#">Plus</a></li><li class="divider"></li><li><a href="#">Déconnexion</a></li></ul></div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span12" id="espaceEntete">
+            <!--div class="hero-unit">
+                <h1>Bienvenue dans le monde du Bubble</h1>
+            </div-->
+        </div>
+    </div>
+</div>
+<aside class="span3">
+    <div class="row">
+      <div class="span3 bloc"><h1>L'espace infos client</h1></div>
+      <div class="span3 bloc"><h1>L'espace détails clients</h1></div>
+      <div id="nbUsersDiv">
+        <p>Il y a <span id="nbUsers"></span> personne(s) de connectées.</p>
+      </div>
+    </div>
+</aside>
+
+
+<section class="span9">
+    <div id="chatEntries">
+        
+        <!--header class="top-bar">
+            <div class="left">
+                <span class="icon typicons-message"></span>
+                <h2>BubbleWeb</h2>
+            </div>  
+            <div class="right">
+                <span class="icon typicons-minus"></span>
+                <span class="icon typicons-times"></span>
+            </div>
+        </header>
+
+        <ol class="discussion">
+            <li class="otherAvatar">
+              <div class="avatar">
+                <img src="images/gdragon.jpg" alt="stylish gdragon"/>
+              </div>
+              <div class="messages">
+                <p>yeah, they do early flights cause they connect with big airports.  they wanna get u to your connection</p>
+                <time datetime="2009-11-13T20:00">Timothy • 51 min</time>
+              </div>
+            </li>
+            <li class="selfAvatar">
+              <div class="avatar">
+                <img src="images/suzy.jpg" alt="beauty suzy" />
+              </div>
+              <div class="messages">
+                <p>That makes sense.</p>
+                <p>It's a pretty small airport.</p>
+                <time datetime="2009-11-13T20:14">37 mins</time>
+              </div>
+            </li>
+            <li class="otherAvatar">
+              <div class="avatar">
+                <img src="images/gdragon.jpg" alt="stylish gdragon" />
+              </div>
+              <div class="messages">
+                <p>that mongodb thing looks good, huh?</p>
+                <p>
+                  tiny master db, and huge document store</p>
+              </div>
+            </li>
+        </ol-->
+
+    </div>
+
+    <div id="entries" class="row">
+      <input type="text" id="messageInput">
+       <div class="btn-group">
+        <button id="submit" data-loading-text="Envoyer" class="btn">Envoyer</button>
+        <button data-toggle="dropdown" class="btn dropdown-toggle"><span class="caret"></span></button>
+        <ul class="dropdown-menu">
+          <li><a id="edit" href="#modalPseudo" data-toggle="modal"><i class="icon-user"></i>Emoticônes</a></li>
+          <li><a id="info" href="#modalInfos" data-toggle="modal"><i class="icon-info-sign"></i>Conavigation</a></li>
+        </ul>
+      </div>
+    </div>
+
+</section>
+<footer class="span12"><h1>Pied de Page</h1></footer>
+</div>
+	</body>
+</html>
+

@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<link rel="stylesheet" href="css/main.css" />
+
+	<title>BubbleWeb</title>
+
+  </head>
+
+  <body>
+
+  	<form action="/urltest" id="addOperatorForm" method="post" class="cm-form-highlight" enctype="multipart/form-data">
+  		<input type="hidden" name="operator[website_id]" value="155" />
+  		<input type="hidden" name="redirect_url" value="index.php?dispatch=websites.manage#operators_155" />
+
+  		<div class="form-field">
+  			<label class="min-width" for="lastname">Nom : </label>
+  			<input type="text"  name="operator[lastname]" id="lastname" value="" class="input-text-large" />
+  			&nbsp;&nbsp;&nbsp;<label for="firstname">Prénom : </label>
+  			<input type="text"  name="operator[firstname]" id="firstname" value="" class="input-text-large" />
+        <label class="min-width" for="password">mot de passe (a supprimer) : </label>
+        <input type="text"  name="operator[password]" id="password" value="" class="input-text-large" />
+  		</div>
+  		<div class="form-field">
+  			<label class="min-width" for="operator">Email : </label>
+  			<input type="text"  name="operator[operator]" id="operator" value="" class="input-text-large" />
+  		</div>
+  		  		<div class="form-field">
+  			<label class="min-width" for="website">Website : </label>
+  			<input type="text"  name="operator[website]" id="website" value="" class="input-text-large" />
+  		</div>
+  		<div class="form-field">
+  			<label class="min-width" for="welcome_message">Engager la conversation avec la phrase suivante : </label>
+  			<input type="text" name="operator[welcome_message]" id="welcome_message" value="Bonjour, en quoi puis-je vous aider ?" class="input-text-large" />
+  		</div>
+  		<div class="form-field">
+  			<label class="min-width" for="chat_open_time">Délai avant le déclenchement de la fenêtre de tchat : </label>
+  			<input type="text" name="operator[chat_open_time]" id="chat_open_time" value="45" class="input-text-large" />
+  			<em>secondes</em>
+  		</div>
+
+  		<div >
+  			<input type="submit" value="Enregistrer" name="dispatch[operators.add]" class="orange-button">
+  		</div>
+  	</form>
+  	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+  	<script src="js/forBubbleWebWebSite.js"></script>
+  </body>
+  </html>
