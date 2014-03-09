@@ -1,9 +1,9 @@
-var async = require('async'),
-validator = require('validator'),
-mongoose = require('mongoose'),
-User = mongoose.model("User"),
-userController = require('./user.js'),
-database = require('./../../database');
+var async = require('async');
+var validator = require('validator');
+var mongoose = require('mongoose');
+var User = mongoose.model("User");
+var userController = require('./user.js');
+var database = require('./../../database');
 
 
 
