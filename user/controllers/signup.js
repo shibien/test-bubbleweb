@@ -3,7 +3,7 @@ var validator = require('validator');
 var mongoose = require('mongoose');
 var User = mongoose.model("User");
 var userController = require('./user.js');
-var database = require('./../../database');
+var database = require('./../../Database');
 
 
 
