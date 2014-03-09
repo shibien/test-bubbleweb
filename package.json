@@ -11,14 +11,23 @@
     "grunt-contrib-concat": "~0.3.0"
   },
   "dependencies": {
+    "async": "0.2.9",
+    "connect": "~2.12.0",
+    "connect-redis": "1.4.6",
+    "cookie": "~0.1.0",
     "ejs": "~0.8.5",
     "express": "~3.4.5",
     "express.io": "1.1.13",
+    "geoip2ws": "1.1.0",
     "socket.io": "~0.9.16",
-    "connect": "~2.12.0",
-    "cookie": "~0.1.0",
     "mongodb": "1.2.7",
+    "mongoose": "3.8.4",
+    "node-gyp": "0.12.2",
+    "nodemailer": "0.6.1",
     "passport": "~0.2.0",
-    "validator": "~3.2.1"
+    "redis": "0.9.1",
+    "redis-commander": "0.2.1",
+    "socket.io": "0.9.16",
+    "validator": "~3.2.1" 
   }
 }
