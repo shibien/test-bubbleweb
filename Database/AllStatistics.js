@@ -1,6 +1,6 @@
 var statisticsDay = require('./StatisticsDay');
-var statisticsWeek = require('./statisticsWeek');
-var statisticsMonth = require('./statisticsMonth');
+var statisticsWeek = require('./StatisticsWeek');
+var statisticsMonth = require('./StatisticsMonth');
 
 var addNumberOfVisitors = function(website, callback){
 	statisticsDay.addNumberOfVisitors(website, function(err){
