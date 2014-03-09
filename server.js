@@ -1,4 +1,5 @@
-
+var PORT = process.env.OPENSHIFT_NODEJS_PORT || 8080;
+var IPADDRESS = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1'; 
 
 
 var express = require('express.io'),
@@ -1780,4 +1781,4 @@ app.io.route('sendEmail', function(req){
 });
 
 
-app.listen(8686);
+app.listen(PORT, IPADDRESS);
